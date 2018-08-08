@@ -15,6 +15,8 @@ namespace AnalisisNumerico.UI
         public FormularioInicio()
         {
             InitializeComponent();
+            textBox_InicioIntervalo.Enabled = false;
+            textBox_FinIntervalo.Enabled = false;            
         }
     }
 }

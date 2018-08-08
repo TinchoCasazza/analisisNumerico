@@ -51,10 +51,6 @@
       <Project>{fcf0ffda-3e5d-4aa6-9627-6d4b41ac6041}</Project>
       <Name>AnalisisNumerico.Entidades</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AnalisisNumerico.UI\AnalisisNumerico.UI.csproj">
-      <Project>{cfd08c10-5da4-456b-a2a3-464c8fe33bd2}</Project>
-      <Name>AnalisisNumerico.UI</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="docs\member-search-index.zip" />

@@ -29,7 +29,7 @@ namespace AnalisisNumerico.UI
             //Create the container as usual
             container = new Container();
 
-            container.Register<IMetodosRaices, MetodosRaices>(); //Ver porque no me deja usar la referencia al otro proyeto
+            container.Register<IMetodosRaices, MetodosRaices>(); 
             container.Register<FormularioInicio>();
         }
     }

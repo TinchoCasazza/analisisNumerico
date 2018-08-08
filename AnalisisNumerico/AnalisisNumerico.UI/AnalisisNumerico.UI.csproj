@@ -56,6 +56,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormularioInicio.resx">
+      <DependentUpon>FormularioInicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -87,6 +90,10 @@
     <ProjectReference Include="..\AnalisisNumerico.Logica.Test\AnalisisNumerico.Logica.Test.csproj">
       <Project>{2ba2e805-4fb5-40c0-833d-6b6344471512}</Project>
       <Name>AnalisisNumerico.Logica.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnalisisNumerico.Logica\AnalisisNumerico.Logica.csproj">
+      <Project>{37fb4342-8b7c-4a3f-9787-7fa87606dbba}</Project>
+      <Name>AnalisisNumerico.Logica</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

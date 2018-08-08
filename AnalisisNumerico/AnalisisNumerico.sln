@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalisisNumerico.Entidades", "AnalisisNumerico.Entidades\AnalisisNumerico.Entidades.csproj", "{FCF0FFDA-3E5D-4AA6-9627-6D4B41AC6041}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalisisNumerico.Logica", "AnalisisNumerico.Logica\AnalisisNumerico.Logica.csproj", "{37FB4342-8B7C-4A3F-9787-7FA87606DBBA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2BA2E805-4FB5-40C0-833D-6B6344471512} = {2BA2E805-4FB5-40C0-833D-6B6344471512}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalisisNumerico.Logica.Test", "AnalisisNumerico.Logica.Test\AnalisisNumerico.Logica.Test.csproj", "{2BA2E805-4FB5-40C0-833D-6B6344471512}"
 EndProject
