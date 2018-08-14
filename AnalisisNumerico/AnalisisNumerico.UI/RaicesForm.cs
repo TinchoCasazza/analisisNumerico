@@ -1,0 +1,177 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using AnalisisNumerico.Entidades;
+
+namespace AnalisisNumerico.UI
+{
+    public partial class RaicesForm : Form
+    {
+        private readonly IMetodosRaices metodosRaices;
+
+        public RaicesForm(IMetodosRaices metodosRaices)
+        {
+            this.metodosRaices = metodosRaices;
+            InitializeComponent();
+        }
+
+        private void RaicesForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_ValorFinal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_ValorInical_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Calcular_Click(object sender, EventArgs e)
+        {            
+            var parametros = new ParametrosBiseccion();
+            // Se comprueba que no exista texbox sin datos
+            if (String.IsNullOrWhiteSpace(textBox_Funcion.Text) ||
+                String.IsNullOrWhiteSpace(textBox_Tolerancia.Text) ||
+               String.IsNullOrWhiteSpace(textBox_Iteraciones.Text) ||
+               String.IsNullOrWhiteSpace(textBox_ValorFinal.Text) ||
+               String.IsNullOrWhiteSpace(textBox_ValorInical.Text))
+            {
+                MessageBox.Show("Faltan ingresar datos", "Notificación", MessageBoxButtons.OK);               
+            }
+            else
+            {
+                parametros.Funcion = textBox_Funcion.Text;
+                parametros.Iteraciones = int.Parse(textBox_Iteraciones.Text);
+                parametros.Tolerancia = double.Parse(textBox_Tolerancia.Text);
+                parametros.ValorFinal = double.Parse(textBox_ValorFinal.Text);
+                parametros.ValorInicial = double.Parse(textBox_ValorInical.Text);
+
+                var resultado = metodosRaices.MetodoBiseccion(parametros);
+
+                textBox_MostrarError.Text = resultado.Error.ToString();
+                textBox_MostrarIteraciones.Text = resultado.Error.ToString();
+                textBox_MostrarRaiz.Text = resultado.Raiz.ToString();
+            }
+       
+
+
+        }
+
+        private void textBox_Iteraciones_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números 
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+           if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso 
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan 
+                e.Handled = true;
+            }           
+        }
+
+        private void textBox_Iteraciones_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_Tolerancia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textBox_Tolerancia.Text.Contains(","))
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+                if (e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+            else
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+                if (e.KeyChar == ',' || e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+        }
+
+        private void textBox_ValorFinal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textBox_ValorFinal.Text.Contains(","))
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+                if (e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+            else
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+                if (e.KeyChar == ',' || e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+        }
+
+        private void textBox_ValorInical_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textBox_ValorInical.Text.Contains(","))
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+                if (e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+            else
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+                if (e.KeyChar == ',' || e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+        }
+    }
+}

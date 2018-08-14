@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FCF0FFDA-3E5D-4AA6-9627-6D4B41AC6041}</ProjectGuid>
+    <ProjectGuid>{8D542AA6-2C9E-4B58-BFEC-1DF9824C84D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AnalisisNumerico.Entidades</RootNamespace>
@@ -44,12 +44,6 @@
     <Compile Include="ParametrosBiseccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resultado.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AnalisisNumerico.Logica.Test\AnalisisNumerico.Logica.Test.csproj">
-      <Project>{2ba2e805-4fb5-40c0-833d-6b6344471512}</Project>
-      <Name>AnalisisNumerico.Logica.Test</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

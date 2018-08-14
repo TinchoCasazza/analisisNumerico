@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{37FB4342-8B7C-4A3F-9787-7FA87606DBBA}</ProjectGuid>
+    <ProjectGuid>{93294443-C412-4238-8101-46487BD3ECF3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AnalisisNumerico.Logica</RootNamespace>
@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AnalisisNumerico.Entidades\AnalisisNumerico.Entidades.csproj">
-      <Project>{fcf0ffda-3e5d-4aa6-9627-6d4b41ac6041}</Project>
+      <Project>{8D542AA6-2C9E-4B58-BFEC-1DF9824C84D0}</Project>
       <Name>AnalisisNumerico.Entidades</Name>
     </ProjectReference>
   </ItemGroup>

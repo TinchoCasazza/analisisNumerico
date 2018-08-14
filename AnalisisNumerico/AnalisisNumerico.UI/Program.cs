@@ -1,36 +1,35 @@
-﻿using System;
-using SimpleInjector;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using AnalisisNumerico.Entidades;
+﻿using AnalisisNumerico.Entidades;
 using AnalisisNumerico.Logica;
-
+using SimpleInjector;
+using System;
+using System.Windows.Forms;
 
 namespace AnalisisNumerico.UI
 {
     static class Program
     {
         private static Container container;
+
         /// <summary>
-        /// Punto de entrada principal para la aplicación.
+        /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(container.GetInstance<FormularioInicio>());
+            Bootstrap();
+            Application.Run(container.GetInstance<InicioForm>());
         }
 
         private static void Bootstrap()
         {
-            //Create the container as usual
+            // Create the container as usual.
             container = new Container();
 
-            container.Register<IMetodosRaices, MetodosRaices>(); 
-            container.Register<FormularioInicio>();
+            // Register your types, for instance:
+            container.Register<IMetodosRaices, MetodosRaices>();
+            container.Register<InicioForm>();
         }
     }
 }

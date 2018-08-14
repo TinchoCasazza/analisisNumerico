@@ -1,14 +1,15 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AnalisisNumerico.Logica.Test
+namespace AnalisisNumerico.Logica.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class TestRaices
     {
         [TestMethod]
-        public void TestMethod1()
+        public void DeberiaCalcularLabiseccion()
         {
+
         }
     }
 }
