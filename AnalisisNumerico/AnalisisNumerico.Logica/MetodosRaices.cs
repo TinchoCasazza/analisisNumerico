@@ -34,6 +34,7 @@ namespace AnalisisNumerico.Logica
             bool termino = false;
 
             ResultadoBiseccion resultado = new ResultadoBiseccion();
+            resultado.Texto = "";
 
             if (valoresCalculados > 0)
             {
@@ -70,7 +71,6 @@ namespace AnalisisNumerico.Logica
                     if ((Math.Abs(Xr) < parametros.Tolerancia) || (Erel < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones))
                     {
                         resultado.Raiz = Xr;
-                        resultado.Texto = "";
                         termino = true;
                     }
                     else

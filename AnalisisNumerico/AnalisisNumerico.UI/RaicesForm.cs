@@ -19,6 +19,7 @@ namespace AnalisisNumerico.UI
         {
             this.metodosRaices = metodosRaices;
             InitializeComponent();
+            textBox_ValorInical.Text = "-";
         }
 
         private void RaicesForm_Load(object sender, EventArgs e)
@@ -63,13 +64,17 @@ namespace AnalisisNumerico.UI
 
                 var resultado = metodosRaices.MetodoBiseccion(parametros);
 
-                textBox_MostrarError.Text = resultado.Error.ToString();
-                textBox_MostrarIteraciones.Text = resultado.Error.ToString();
-                textBox_MostrarRaiz.Text = resultado.Raiz.ToString();
-            }
-       
-
-
+                if (resultado.Texto=="")
+                {
+                    textBox_MostrarError.Text = resultado.Error.ToString();
+                    textBox_MostrarIteraciones.Text = resultado.Iteraciones.ToString();
+                    textBox_MostrarRaiz.Text = resultado.Raiz.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Los extremos ingresados no son válidos", "Notificación", MessageBoxButtons.OK);
+                }         
+            }       
         }
 
         private void textBox_Iteraciones_KeyPress(object sender, KeyPressEventArgs e)
@@ -98,59 +103,22 @@ namespace AnalisisNumerico.UI
 
         private void textBox_Tolerancia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (textBox_Tolerancia.Text.Contains(","))
-            {
-                if (!char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-                if (e.KeyChar == '\b')
-                {
-                    e.Handled = false;
-                }
-            }
-            else
-            {
-                if (!char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-                if (e.KeyChar == ',' || e.KeyChar == '\b')
-                {
-                    e.Handled = false;
-                }
-            }
+            ControlTeclas(sender, e , textBox_Tolerancia);
         }
 
         private void textBox_ValorFinal_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (textBox_ValorFinal.Text.Contains(","))
-            {
-                if (!char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-                if (e.KeyChar == '\b')
-                {
-                    e.Handled = false;
-                }
-            }
-            else
-            {
-                if (!char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-                if (e.KeyChar == ',' || e.KeyChar == '\b')
-                {
-                    e.Handled = false;
-                }
-            }
+            ControlTeclas(sender, e, textBox_ValorFinal);
         }
 
         private void textBox_ValorInical_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (textBox_ValorInical.Text.Contains(","))
+            ControlTeclas(sender, e, textBox_ValorInical);
+        }
+
+        private void ControlTeclas(object sender, KeyPressEventArgs e, TextBox textBox)
+        {
+            if (textBox.Text.Contains(","))
             {
                 if (!char.IsDigit(e.KeyChar))
                 {
@@ -172,6 +140,6 @@ namespace AnalisisNumerico.UI
                     e.Handled = false;
                 }
             }
-        }
+        } // Solo numeros y la coma
     }
 }

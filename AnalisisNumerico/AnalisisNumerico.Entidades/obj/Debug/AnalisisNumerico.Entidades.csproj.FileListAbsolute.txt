@@ -4,3 +4,9 @@ C:\Users\Juan Aira\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug
 C:\Users\Juan Aira\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Juan Aira\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.dll
 C:\Users\Juan Aira\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.pdb
+C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.Entidades\bin\Debug\AnalisisNumerico.Entidades.dll
+C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.Entidades\bin\Debug\AnalisisNumerico.Entidades.pdb
+C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.dll
+C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.pdb
