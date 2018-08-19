@@ -2,6 +2,6 @@
 {
     public interface IMetodosRaices
     {
-        ResultadoBiseccion MetodoBiseccion(ParametrosBiseccion parametros);
+        ResultadoRaices MetodoBiseccion(ParametrosRaices parametros);       
     }
 }

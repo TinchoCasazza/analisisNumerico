@@ -11,15 +11,17 @@ using AnalisisNumerico.Entidades;
 
 namespace AnalisisNumerico.UI
 {
-    public partial class RaicesForm : Form
-    {
+    public partial class MetodosCerradosForm : Form
+    {        
         private readonly IMetodosRaices metodosRaices;
+        private bool okey;
 
-        public RaicesForm(IMetodosRaices metodosRaices)
-        {
+        public MetodosCerradosForm(IMetodosRaices metodosRaices, bool pok)
+        {          
             this.metodosRaices = metodosRaices;
             InitializeComponent();
             textBox_ValorInical.Text = "-";
+            okey = pok;
         }
 
         private void RaicesForm_Load(object sender, EventArgs e)
@@ -43,8 +45,8 @@ namespace AnalisisNumerico.UI
         }
 
         private void button_Calcular_Click(object sender, EventArgs e)
-        {            
-            var parametros = new ParametrosBiseccion();
+        {
+            var parametros = new ParametrosRaices();
             // Se comprueba que no exista texbox sin datos
             if (String.IsNullOrWhiteSpace(textBox_Funcion.Text) ||
                 String.IsNullOrWhiteSpace(textBox_Tolerancia.Text) ||
@@ -61,14 +63,14 @@ namespace AnalisisNumerico.UI
                 parametros.Tolerancia = double.Parse(textBox_Tolerancia.Text);
                 parametros.ValorFinal = double.Parse(textBox_ValorFinal.Text);
                 parametros.ValorInicial = double.Parse(textBox_ValorInical.Text);
-
-                var resultado = metodosRaices.MetodoBiseccion(parametros);
+                parametros.Ok = okey;
+                var resultado = metodosRaices.MetodoBiseccion(parametros );
 
                 if (resultado.Texto=="")
                 {
-                    textBox_MostrarError.Text = resultado.Error.ToString();
+                    textBox_MostrarError.Text = resultado.Error.ToString("N8");
                     textBox_MostrarIteraciones.Text = resultado.Iteraciones.ToString();
-                    textBox_MostrarRaiz.Text = resultado.Raiz.ToString();
+                    textBox_MostrarRaiz.Text = resultado.Raiz.ToString("N8");
                 }
                 else
                 {

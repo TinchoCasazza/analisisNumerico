@@ -1,6 +1,6 @@
 ﻿namespace AnalisisNumerico.Entidades
 {
-    public class ParametrosBiseccion
+    public class ParametrosRaices
     {
         public string Funcion { get; set; }
 
@@ -11,5 +11,7 @@
         public int Iteraciones { get; set; }
 
         public double Tolerancia { get; set; }
+
+        public bool Ok { get; set; }
     }
 }

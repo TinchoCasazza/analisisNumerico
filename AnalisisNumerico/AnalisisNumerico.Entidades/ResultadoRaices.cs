@@ -1,6 +1,6 @@
 ﻿namespace AnalisisNumerico.Entidades
 {
-    public class ResultadoBiseccion
+    public class ResultadoRaices
     {
         public double Raiz { get; set; }
 

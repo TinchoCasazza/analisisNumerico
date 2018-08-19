@@ -6,45 +6,30 @@ namespace AnalisisNumerico.Logica
 {
     public class MetodosRaices : IMetodosRaices
     {
-        public ResultadoBiseccion MetodoBiseccion(ParametrosBiseccion parametros)
+        public ResultadoRaices MetodoBiseccion(ParametrosRaices parametros)
         {
             var funcion = new Function(parametros.Funcion);
-            var argumento1 = new Argument("a", parametros.ValorInicial);
-            var argumento2 = new Argument("b", parametros.ValorFinal);
+            var argumento1 = new Argument("x", parametros.ValorInicial);
+            var argumento2 = new Argument("x", parametros.ValorFinal);
 
             var nombre = parametros.Funcion.Split('=')[0].Trim();
 
-            var expresion = new Expression(nombre, funcion, argumento1, argumento2);
+            var expresion1 = new Expression(nombre, funcion, argumento1);
+            var expresion2 = new Expression(nombre, funcion, argumento2);
 
-
-            // var resultado = expresion.calculate();
-
-            ResultadoBiseccion resultado = new ResultadoBiseccion();
-            resultado = CalcularBiseccion(parametros);
-            return resultado;
-            //return new ResultadoBiseccion
-            //{
-            //    Raiz = resultado
-            //};
-        }
-
-        public ResultadoBiseccion CalcularBiseccion(ParametrosBiseccion parametros)
-        {
-            double valoresCalculados = (parametros.ValorInicial * parametros.ValorFinal);
             bool termino = false;
 
-            ResultadoBiseccion resultado = new ResultadoBiseccion();
+            ResultadoRaices resultado = new ResultadoRaices();
             resultado.Texto = "";
 
-            if (valoresCalculados > 0)
+            if (expresion1.calculate() * expresion2.calculate() > 0)
             {
-                // perdir de nuevo los valores
                 resultado.Texto = "Ingrese otra vez los valores";
                 termino = true;
             }
-            else if (valoresCalculados == 0)
+            else if (expresion1.calculate() * expresion2.calculate() == 0)
             {
-                if (parametros.ValorInicial == 0)
+                if (expresion1.calculate() == 0)
                 {
                     resultado.Raiz = parametros.ValorInicial;
                 }
@@ -57,25 +42,31 @@ namespace AnalisisNumerico.Logica
             {
                 int cInteraciones = 0;
                 double antXr = 0;
-                double Erel = 0;                
+                double Erel = 0;
+                double Xr = 0;
 
                 while (!termino)
-                {
-
-                    double Xr = (parametros.ValorFinal + parametros.ValorInicial) / 2;
-
+                {                    
+                    if (parametros.Ok)
+                    {
+                        Xr = CalcularXrBiseccion(parametros.ValorInicial , parametros.ValorFinal);
+                    }
+                    else
+                    {
+                        Xr = CalcularXrReglaFalsa(parametros.ValorInicial, parametros.ValorFinal,parametros.Funcion);
+                    }
                     cInteraciones++;
 
                     Erel = (Xr - antXr) / Xr;
 
-                    if ((Math.Abs(Xr) < parametros.Tolerancia) || (Erel < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones))
+                    if ((Math.Abs(RetornarImagen(parametros.Funcion, Xr)) < parametros.Tolerancia) || (Math.Abs(Erel) < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones))
                     {
                         resultado.Raiz = Xr;
                         termino = true;
                     }
                     else
                     {
-                        if (valoresCalculados > 0)
+                        if ((RetornarImagen(parametros.Funcion, parametros.ValorInicial) * RetornarImagen(parametros.Funcion, Xr)) > 0)
                         {
                             parametros.ValorInicial = Xr;
                         }
@@ -83,16 +74,28 @@ namespace AnalisisNumerico.Logica
                         {
                             parametros.ValorFinal = Xr;
                         }
-
                         antXr = Xr;
                     }
                 }
                 resultado.Iteraciones = cInteraciones;
                 resultado.Error = Erel;
             }
+            return resultado;
+        }
 
-            return resultado ;
+        private double RetornarImagen(string funcion, double xr)
+        {
+            return new Function(funcion).calculate(xr);
+        }
+
+        private double CalcularXrBiseccion(double xi, double xd)
+        {
+            return (xi + xd) / 2;
+        }
+
+        private double CalcularXrReglaFalsa(double xi, double xd, string pfuncion)
+        {
+            return ((RetornarImagen(pfuncion, xd) * xi) - (RetornarImagen(pfuncion, xi) * xd)) / (RetornarImagen(pfuncion, xd) - RetornarImagen(pfuncion, xi));
         }
     }
-
 }

@@ -30,9 +30,10 @@ C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\bin\D
 C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csprojResolveAssemblyReference.cache
 C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.InicioForm.resources
 C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.Properties.Resources.resources
-C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.RaicesForm.resources
 C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csproj.GenerateResource.cache
 C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csproj.CoreCompileInputs.cache
 C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csproj.CopyComplete
 C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.exe
 C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.pdb
+C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.MétododeNewton_RaphsonForm.resources
+C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.MetodosCerradosForm.resources

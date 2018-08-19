@@ -1,6 +1,6 @@
 ﻿namespace AnalisisNumerico.UI
 {
-    partial class RaicesForm
+    partial class MetodosCerradosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RaicesForm));
             this.label_Iteraciones = new System.Windows.Forms.Label();
             this.label_Tolerancia = new System.Windows.Forms.Label();
             this.label_ValorInicial = new System.Windows.Forms.Label();
@@ -47,8 +46,6 @@
             this.textBox_MostrarError = new System.Windows.Forms.TextBox();
             this.button_Calcular = new System.Windows.Forms.Button();
             this.textBox_Funcion = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label_Iteraciones
@@ -107,7 +104,7 @@
             this.label_Resultado.AutoSize = true;
             this.label_Resultado.BackColor = System.Drawing.SystemColors.Window;
             this.label_Resultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Resultado.Location = new System.Drawing.Point(17, 458);
+            this.label_Resultado.Location = new System.Drawing.Point(17, 398);
             this.label_Resultado.Name = "label_Resultado";
             this.label_Resultado.Size = new System.Drawing.Size(122, 29);
             this.label_Resultado.TabIndex = 6;
@@ -156,7 +153,7 @@
             // 
             this.label_Raiz.AutoSize = true;
             this.label_Raiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Raiz.Location = new System.Drawing.Point(77, 514);
+            this.label_Raiz.Location = new System.Drawing.Point(77, 454);
             this.label_Raiz.Name = "label_Raiz";
             this.label_Raiz.Size = new System.Drawing.Size(66, 29);
             this.label_Raiz.TabIndex = 11;
@@ -165,7 +162,7 @@
             // textBox_MostrarRaiz
             // 
             this.textBox_MostrarRaiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_MostrarRaiz.Location = new System.Drawing.Point(149, 509);
+            this.textBox_MostrarRaiz.Location = new System.Drawing.Point(149, 449);
             this.textBox_MostrarRaiz.Name = "textBox_MostrarRaiz";
             this.textBox_MostrarRaiz.Size = new System.Drawing.Size(173, 34);
             this.textBox_MostrarRaiz.TabIndex = 12;
@@ -174,7 +171,7 @@
             // 
             this.label_.AutoSize = true;
             this.label_.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_.Location = new System.Drawing.Point(333, 513);
+            this.label_.Location = new System.Drawing.Point(333, 453);
             this.label_.Name = "label_";
             this.label_.Size = new System.Drawing.Size(137, 29);
             this.label_.TabIndex = 13;
@@ -184,7 +181,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(680, 513);
+            this.label1.Location = new System.Drawing.Point(680, 453);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 29);
             this.label1.TabIndex = 14;
@@ -193,7 +190,7 @@
             // textBox_MostrarIteraciones
             // 
             this.textBox_MostrarIteraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_MostrarIteraciones.Location = new System.Drawing.Point(476, 513);
+            this.textBox_MostrarIteraciones.Location = new System.Drawing.Point(476, 453);
             this.textBox_MostrarIteraciones.Name = "textBox_MostrarIteraciones";
             this.textBox_MostrarIteraciones.Size = new System.Drawing.Size(198, 34);
             this.textBox_MostrarIteraciones.TabIndex = 15;
@@ -201,7 +198,7 @@
             // textBox_MostrarError
             // 
             this.textBox_MostrarError.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_MostrarError.Location = new System.Drawing.Point(770, 513);
+            this.textBox_MostrarError.Location = new System.Drawing.Point(770, 453);
             this.textBox_MostrarError.Name = "textBox_MostrarError";
             this.textBox_MostrarError.Size = new System.Drawing.Size(253, 34);
             this.textBox_MostrarError.TabIndex = 16;
@@ -209,7 +206,7 @@
             // button_Calcular
             // 
             this.button_Calcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Calcular.Location = new System.Drawing.Point(27, 333);
+            this.button_Calcular.Location = new System.Drawing.Point(915, 228);
             this.button_Calcular.Name = "button_Calcular";
             this.button_Calcular.Size = new System.Drawing.Size(184, 49);
             this.button_Calcular.TabIndex = 17;
@@ -225,23 +222,12 @@
             this.textBox_Funcion.Size = new System.Drawing.Size(205, 34);
             this.textBox_Funcion.TabIndex = 18;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(770, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(582, 386);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            // 
-            // RaicesForm
+            // MetodosCerradosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(1364, 616);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox_Funcion);
             this.Controls.Add(this.button_Calcular);
             this.Controls.Add(this.textBox_MostrarError);
@@ -260,10 +246,9 @@
             this.Controls.Add(this.label_ValorInicial);
             this.Controls.Add(this.label_Tolerancia);
             this.Controls.Add(this.label_Iteraciones);
-            this.Name = "RaicesForm";
+            this.Name = "MetodosCerradosForm";
             this.Text = "RaicesForm";
             this.Load += new System.EventHandler(this.RaicesForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,6 +273,5 @@
         private System.Windows.Forms.TextBox textBox_MostrarError;
         private System.Windows.Forms.Button button_Calcular;
         private System.Windows.Forms.TextBox textBox_Funcion;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
