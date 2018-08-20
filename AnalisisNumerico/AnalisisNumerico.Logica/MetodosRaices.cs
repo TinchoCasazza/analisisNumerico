@@ -97,5 +97,59 @@ namespace AnalisisNumerico.Logica
         {
             return ((RetornarImagen(pfuncion, xd) * xi) - (RetornarImagen(pfuncion, xi) * xd)) / (RetornarImagen(pfuncion, xd) - RetornarImagen(pfuncion, xi));
         }
+
+        public ResultadoRaices MetodoNewton(ParametrosRaices parametros)
+        {
+            var funcion = new Function(parametros.Funcion);
+            var argumento1 = new Argument("x", parametros.ValorInicial);
+
+            var nombre = parametros.Funcion.Split('=')[0].Trim();
+
+            var expresion1 = new Expression(nombre, funcion, argumento1);
+            var expresion2 = new Expression(nombre, funcion, argumento2);
+
+            bool termino = false;
+
+            ResultadoRaices resultado = new ResultadoRaices();
+            resultado.Texto = "";
+
+            if ( RetornarImagen(parametros.funcion , parametros.ValorInicial) == 0) // si el F(x1) es 0
+            {
+                // x1 es raiz
+                resultado.raiz = parametros.ValorInicial;
+            }
+            else
+            {
+                int cInteraciones = 0;
+                double antXr = 0;
+                double Erel = 0;
+                double Xr = 0;
+
+                while (!termino)
+                {                    
+                    Xr = parametros.ValorInicial - ( RetornarImagen(parametros.funcion , parametros.ValorInicial) / )
+
+                    cInteraciones++;
+
+                    Erel = (Xr - antXr) / Xr;
+
+                    if ((Math.Abs(RetornarImagen(parametros.Funcion, Xr)) < parametros.Tolerancia) || (Math.Abs(Erel) < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones))
+                    {
+                        resultado.Raiz = Xr;
+                        termino = true;
+                    }
+                    else
+                    {
+                        antXr = parametros.ValorInicial;
+
+                        parametros.ValorInicial = Xr;
+                    }
+                }
+                resultado.Iteraciones = cInteraciones;
+                resultado.Error = Erel;
+            }
+            return resultado;
+        }
+
     }
 }
