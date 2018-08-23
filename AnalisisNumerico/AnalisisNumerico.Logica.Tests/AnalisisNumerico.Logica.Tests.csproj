@@ -55,6 +55,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnalisisNumerico.Entidades\AnalisisNumerico.Entidades.csproj">
+      <Project>{8d542aa6-2c9e-4b58-bfec-1df9824c84d0}</Project>
+      <Name>AnalisisNumerico.Entidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AnalisisNumerico.Logica\AnalisisNumerico.Logica.csproj">
       <Project>{93294443-c412-4238-8101-46487bd3ecf3}</Project>
       <Name>AnalisisNumerico.Logica</Name>

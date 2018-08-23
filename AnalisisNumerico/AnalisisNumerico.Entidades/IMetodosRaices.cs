@@ -2,6 +2,8 @@
 {
     public interface IMetodosRaices
     {
-        ResultadoRaices MetodoBiseccion(ParametrosRaices parametros);       
+        ResultadoRaices MetodoBiseccionReglaFalsa(ParametrosRaices parametros);
+
+        ResultadoRaices MetodoNewton(ParametrosRaices parametros);
     }
 }

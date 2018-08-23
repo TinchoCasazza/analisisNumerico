@@ -64,7 +64,7 @@ namespace AnalisisNumerico.UI
                 parametros.ValorFinal = double.Parse(textBox_ValorFinal.Text);
                 parametros.ValorInicial = double.Parse(textBox_ValorInical.Text);
                 parametros.Ok = okey;
-                var resultado = metodosRaices.MetodoBiseccion(parametros );
+                var resultado = metodosRaices.MetodoBiseccionReglaFalsa(parametros );
 
                 if (resultado.Texto=="")
                 {

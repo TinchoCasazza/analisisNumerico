@@ -64,7 +64,7 @@ namespace AnalisisNumerico.UI
 
         private void newtonRaphsonToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formNewtonRaphson = new MétododeNewton_RaphsonForm();
+            var formNewtonRaphson = new MétododeNewton_RaphsonForm(metodosRaices);
             formNewtonRaphson.Owner = this;
             formNewtonRaphson.Show();
 
