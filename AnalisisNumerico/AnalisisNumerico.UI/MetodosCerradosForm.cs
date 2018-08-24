@@ -21,27 +21,8 @@ namespace AnalisisNumerico.UI
             this.metodosRaices = metodosRaices;
             InitializeComponent();
             textBox_ValorInical.Text = "-";
+            textBox_Funcion.Text= "f(x)=";
             okey = pok;
-        }
-
-        private void RaicesForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_ValorFinal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_ValorInical_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button_Calcular_Click(object sender, EventArgs e)
@@ -64,6 +45,7 @@ namespace AnalisisNumerico.UI
                 parametros.ValorFinal = double.Parse(textBox_ValorFinal.Text);
                 parametros.ValorInicial = double.Parse(textBox_ValorInical.Text);
                 parametros.Ok = okey;
+
                 var resultado = metodosRaices.MetodoBiseccionReglaFalsa(parametros );
 
                 if (resultado.Texto=="")
@@ -96,11 +78,6 @@ namespace AnalisisNumerico.UI
                 //el resto de teclas pulsadas se desactivan 
                 e.Handled = true;
             }           
-        }
-
-        private void textBox_Iteraciones_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox_Tolerancia_KeyPress(object sender, KeyPressEventArgs e)

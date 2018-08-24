@@ -17,9 +17,10 @@ namespace AnalisisNumerico.UI
         private readonly IMetodosRaices metodosRaices;
 
         public MétododeNewton_RaphsonForm(IMetodosRaices metodosRaices)
-        {
-            this.metodosRaices = metodosRaices;
+        {            
+            this.metodosRaices = metodosRaices;           
             InitializeComponent();
+            textBox_Funcion.Text = "f(x)=";
         }
 
         private void Calcular_Click(object sender, EventArgs e)
@@ -40,7 +41,7 @@ namespace AnalisisNumerico.UI
                 parametros.Tolerancia = double.Parse(textBox_Toleranciia.Text);
                 parametros.ValorInicial = double.Parse(textBox_ValorInicial.Text);
 
-                var resultado = metodosRaices.MetodoBiseccionReglaFalsa(parametros);
+                 var resultado = metodosRaices.MetodoNewton(parametros);               
 
                 if (resultado.Texto == "")
                 {
@@ -55,9 +56,5 @@ namespace AnalisisNumerico.UI
             }
         }
 
-        private void MétododeNewton_RaphsonForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

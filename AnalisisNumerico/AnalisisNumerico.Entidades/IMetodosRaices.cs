@@ -5,5 +5,7 @@
         ResultadoRaices MetodoBiseccionReglaFalsa(ParametrosRaices parametros);
 
         ResultadoRaices MetodoNewton(ParametrosRaices parametros);
+
+        ResultadoRaices MetodoSecante(ParametrosRaices parametros);
     }
 }

@@ -87,7 +87,6 @@
             this.label_ValorFinal.Size = new System.Drawing.Size(125, 29);
             this.label_ValorFinal.TabIndex = 4;
             this.label_ValorFinal.Text = "Valor final:";
-            this.label_ValorFinal.Click += new System.EventHandler(this.label_ValorFinal_Click);
             // 
             // label_Funcion
             // 
@@ -117,7 +116,6 @@
             this.textBox_Iteraciones.Name = "textBox_Iteraciones";
             this.textBox_Iteraciones.Size = new System.Drawing.Size(147, 34);
             this.textBox_Iteraciones.TabIndex = 7;
-            this.textBox_Iteraciones.TextChanged += new System.EventHandler(this.textBox_Iteraciones_TextChanged);
             this.textBox_Iteraciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Iteraciones_KeyPress);
             // 
             // textBox_Tolerancia
@@ -136,7 +134,6 @@
             this.textBox_ValorInical.Name = "textBox_ValorInical";
             this.textBox_ValorInical.Size = new System.Drawing.Size(167, 34);
             this.textBox_ValorInical.TabIndex = 9;
-            this.textBox_ValorInical.TextChanged += new System.EventHandler(this.textBox_ValorInical_TextChanged);
             this.textBox_ValorInical.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_ValorInical_KeyPress);
             // 
             // textBox_ValorFinal
@@ -146,7 +143,6 @@
             this.textBox_ValorFinal.Name = "textBox_ValorFinal";
             this.textBox_ValorFinal.Size = new System.Drawing.Size(168, 34);
             this.textBox_ValorFinal.TabIndex = 10;
-            this.textBox_ValorFinal.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             this.textBox_ValorFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_ValorFinal_KeyPress);
             // 
             // label_Raiz
@@ -248,7 +244,6 @@
             this.Controls.Add(this.label_Iteraciones);
             this.Name = "MetodosCerradosForm";
             this.Text = "RaicesForm";
-            this.Load += new System.EventHandler(this.RaicesForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

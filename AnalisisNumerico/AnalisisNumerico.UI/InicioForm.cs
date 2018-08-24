@@ -12,8 +12,7 @@ namespace AnalisisNumerico.UI
 
         public InicioForm(IMetodosRaices metodosRaices)
         {
-            this.metodosRaices = metodosRaices;
-
+            this.metodosRaices = metodosRaices;   
             InitializeComponent();
         }
 
@@ -33,42 +32,28 @@ namespace AnalisisNumerico.UI
             //MessageBox.Show(resultado.Raiz.ToString());
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void InicioForm_Load(object sender, EventArgs e)
+        private void bisecciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
-        }
-
-        private void biseccionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+            //
             var formuBiseccion = new MetodosCerradosForm(metodosRaices, true);
             formuBiseccion.Owner = this;
             formuBiseccion.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void reglaFalsaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void reglaFalsaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+            //
             var formReglaFalsa = new MetodosCerradosForm(metodosRaices, false);
             formReglaFalsa.Owner = this;
             formReglaFalsa.Show();
         }
 
-        private void newtonRaphsonToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newtonRaphsonToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var formNewtonRaphson = new MétododeNewton_RaphsonForm(metodosRaices);
             formNewtonRaphson.Owner = this;
             formNewtonRaphson.Show();
-
-
         }
     }
 }

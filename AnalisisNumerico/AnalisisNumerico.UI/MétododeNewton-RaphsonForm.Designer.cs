@@ -217,7 +217,6 @@
             this.Controls.Add(this.label1);
             this.Name = "MétododeNewton_RaphsonForm";
             this.Text = "MétododeNewton_RaphsonForm";
-            this.Load += new System.EventHandler(this.MétododeNewton_RaphsonForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
