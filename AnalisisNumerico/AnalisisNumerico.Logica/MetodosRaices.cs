@@ -189,13 +189,14 @@ namespace AnalisisNumerico.Logica
             double Xini1 = parametros.ValorFinal;
             double Xini2 = 0;
 
+            double Xant = 0;
 
             Xini2 = ((RetornarImagen(parametros.Funcion, Xini1) * Xini0) - (RetornarImagen(parametros.Funcion, Xini0) * Xini1) / (RetornarImagen(parametros.Funcion, Xini1) - RetornarImagen(parametros.Funcion, Xini0)));
 
-            if (RetornarImagen(parametros.Funcion, Xini2) == 0)
+            if (RetornarImagen(parametros.Funcion, Xini0) * RetornarImagen(parametros.Funcion, Xini1)) == 0
             {
                 // x1 es raiz
-                resultado.Raiz = Xini2;
+                resultado.Raiz = Xini0;
             }
             else
             {
@@ -204,20 +205,21 @@ namespace AnalisisNumerico.Logica
 
                 while (!termino)
                 {
+                    
                     cInteraciones++;
+                    Xant = Xini2;
 
                     Xini0 = Xini1;
                     Xini1 = Xini2;
 
                     Xini2 = ((RetornarImagen(parametros.Funcion, Xini1) * Xini0) - RetornarImagen(parametros.Funcion, Xini0) * Xini1) / (RetornarImagen(parametros.Funcion, Xini1) - RetornarImagen(parametros.Funcion, Xini0));
 
-
-
-                    //Erel = (Xr - antXr) / Xr;
+                    Erel = (Xini2 - Xant) / Xini2;
 
                     if ((Math.Abs(RetornarImagen(parametros.Funcion, Xini2)) < parametros.Tolerancia) || (Math.Abs(Erel) < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones))
                     {
                         resultado.Raiz = Xini2;
+                        resultado.Error = Erel;
                         termino = true;
                         break;
                     }
