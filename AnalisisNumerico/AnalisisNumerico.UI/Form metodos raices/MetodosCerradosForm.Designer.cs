@@ -202,9 +202,9 @@
             // button_Calcular
             // 
             this.button_Calcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Calcular.Location = new System.Drawing.Point(915, 228);
+            this.button_Calcular.Location = new System.Drawing.Point(770, 278);
             this.button_Calcular.Name = "button_Calcular";
-            this.button_Calcular.Size = new System.Drawing.Size(184, 49);
+            this.button_Calcular.Size = new System.Drawing.Size(196, 64);
             this.button_Calcular.TabIndex = 17;
             this.button_Calcular.Text = "Calcular";
             this.button_Calcular.UseVisualStyleBackColor = true;
@@ -215,7 +215,7 @@
             this.textBox_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Funcion.Location = new System.Drawing.Point(130, 36);
             this.textBox_Funcion.Name = "textBox_Funcion";
-            this.textBox_Funcion.Size = new System.Drawing.Size(205, 34);
+            this.textBox_Funcion.Size = new System.Drawing.Size(245, 34);
             this.textBox_Funcion.TabIndex = 18;
             // 
             // MetodosCerradosForm
@@ -223,7 +223,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(1364, 616);
+            this.ClientSize = new System.Drawing.Size(1075, 616);
             this.Controls.Add(this.textBox_Funcion);
             this.Controls.Add(this.button_Calcular);
             this.Controls.Add(this.textBox_MostrarError);

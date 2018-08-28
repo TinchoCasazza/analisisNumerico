@@ -40,10 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMetodosRaices.cs" />
-    <Compile Include="ParametrosRaices.cs" />
+    <Compile Include="Raices\IMetodosRaices.cs" />
+    <Compile Include="Raices\ParametrosRaices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResultadoRaices.cs" />
+    <Compile Include="Raices\ResultadoRaices.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

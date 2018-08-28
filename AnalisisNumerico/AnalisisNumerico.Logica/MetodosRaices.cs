@@ -59,14 +59,20 @@ namespace AnalisisNumerico.Logica
 
                     Erel = (Xr - antXr) / Xr; //Ver el caso que divide por 0
 
-                    if ((Math.Abs(RetornarImagen(parametros.Funcion, Xr)) < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones) || (Math.Abs(Erel) < parametros.Tolerancia)  )
+                    //var argumentoXr = new Argument("x", Xr);
+                    //var expresionXr = new Expression(nombre, funcion, argumentoXr);
+                    var imagenvalxer = RetornarImagen(parametros.Funcion, Xr);
+
+                    if ((Math.Abs(imagenvalxer) < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones) || (Math.Abs(Erel) < parametros.Tolerancia))
                     {
                         resultado.Raiz = Xr;
                         termino = true;
                     }
                     else
                     {
-                        if ((RetornarImagen(parametros.Funcion, parametros.ValorInicial) * RetornarImagen(parametros.Funcion, Xr)) > 0)
+                        var imagenvalorinicial = expresion1.calculate();
+                        var imagenvalorxr = RetornarImagen(parametros.Funcion, Xr);
+                        if ((expresion1.calculate()) * RetornarImagen(parametros.Funcion, Xr) > 0)
                         {
                             parametros.ValorInicial = Xr;
                         }
@@ -76,6 +82,7 @@ namespace AnalisisNumerico.Logica
                         }
                         antXr = Xr;
                     }
+
                 }
                 resultado.Iteraciones = cInteraciones;
                 resultado.Error = Math.Abs(Erel);
@@ -85,7 +92,8 @@ namespace AnalisisNumerico.Logica
 
         private double RetornarImagen(string funcion, double xr)
         {
-            return new Function(funcion).calculate(xr);
+            var imagen = new Function(funcion).calculate(xr);
+            return imagen;
         }
 
         private double CalcularXrBiseccion(double xi, double xd)
@@ -98,7 +106,7 @@ namespace AnalisisNumerico.Logica
             return ((RetornarImagen(pfuncion, xd) * xi) - (RetornarImagen(pfuncion, xi) * xd)) / (RetornarImagen(pfuncion, xd) - RetornarImagen(pfuncion, xi));
         }
 
-        public ResultadoRaices MetodoNewton(ParametrosRaices parametros)
+        public ResultadoRaices MetodoTangente(ParametrosRaices parametros)
         {
             var funcion = new Function(parametros.Funcion);
             var argumento1 = new Argument("x", parametros.ValorInicial);
@@ -131,13 +139,16 @@ namespace AnalisisNumerico.Logica
                 {
                     double aproximacion = Xini + parametros.Tolerancia;
 
+                    var imagenaproximaxion = RetornarImagen(parametros.Funcion, aproximacion);
+                    var imagenxini = RetornarImagen(parametros.Funcion, Xini);
+
                     dFx = (RetornarImagen(parametros.Funcion, aproximacion) - RetornarImagen(parametros.Funcion, Xini)) / parametros.Tolerancia;
 
                     Xr = parametros.ValorInicial - (RetornarImagen(parametros.Funcion, parametros.ValorInicial) / dFx);
 
                     cInteraciones++;
 
-                    Erel = (Xr - antXr) / Xr;
+                    Erel = Math.Abs(Xr - antXr) / Xr;
 
                     if ((Math.Abs(RetornarImagen(parametros.Funcion, Xr)) < parametros.Tolerancia) || (Math.Abs(Erel) < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones))
                     {
@@ -153,7 +164,7 @@ namespace AnalisisNumerico.Logica
                     }
                 }
                 resultado.Iteraciones = cInteraciones;
-                resultado.Error = Erel;
+                resultado.Error = Math.Abs(Erel);
             }
             return resultado;
         }
@@ -179,9 +190,9 @@ namespace AnalisisNumerico.Logica
             double Xini2 = 0;
 
 
-            Xini2 = ((RetornarImagen(parametros.Funcion, Xini1) * Xini0) - (RetornarImagen(parametros.Funcion, Xini0) * Xini1) / ( RetornarImagen(parametros.Funcion, Xini1) - RetornarImagen(parametros.Funcion, Xini0))) ; 
+            Xini2 = ((RetornarImagen(parametros.Funcion, Xini1) * Xini0) - (RetornarImagen(parametros.Funcion, Xini0) * Xini1) / (RetornarImagen(parametros.Funcion, Xini1) - RetornarImagen(parametros.Funcion, Xini0)));
 
-            if (RetornarImagen(parametros.Funcion, Xini2) == 0) // si el F(x1) es 0
+            if (RetornarImagen(parametros.Funcion, Xini2) == 0)
             {
                 // x1 es raiz
                 resultado.Raiz = Xini2;
@@ -201,6 +212,7 @@ namespace AnalisisNumerico.Logica
                     Xini2 = ((RetornarImagen(parametros.Funcion, Xini1) * Xini0) - RetornarImagen(parametros.Funcion, Xini0) * Xini1) / (RetornarImagen(parametros.Funcion, Xini1) - RetornarImagen(parametros.Funcion, Xini0));
 
 
+
                     //Erel = (Xr - antXr) / Xr;
 
                     if ((Math.Abs(RetornarImagen(parametros.Funcion, Xini2)) < parametros.Tolerancia) || (Math.Abs(Erel) < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones))
@@ -208,7 +220,7 @@ namespace AnalisisNumerico.Logica
                         resultado.Raiz = Xini2;
                         termino = true;
                         break;
-                    }                    
+                    }
                 }
                 resultado.Iteraciones = cInteraciones;
                 resultado.Error = Erel;

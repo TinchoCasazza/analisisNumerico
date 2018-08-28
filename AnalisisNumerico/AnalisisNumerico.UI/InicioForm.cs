@@ -51,9 +51,18 @@ namespace AnalisisNumerico.UI
 
         private void newtonRaphsonToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var formNewtonRaphson = new MétododeNewton_RaphsonForm(metodosRaices);
+            var formNewtonRaphson = new MetodoTangente(metodosRaices);
             formNewtonRaphson.Owner = this;
             formNewtonRaphson.Show();
         }
+
+        private void secanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formSecante = new MetodoSecante(metodosRaices);
+            formSecante.Owner = this;
+            formSecante.Show();
+        }
+
+
     }
 }

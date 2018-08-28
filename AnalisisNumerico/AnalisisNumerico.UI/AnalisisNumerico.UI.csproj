@@ -54,25 +54,34 @@
     <Compile Include="InicioForm.Designer.cs">
       <DependentUpon>InicioForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MétododeNewton-RaphsonForm.cs">
+    <Compile Include="Form metodos raices\MetodoSecante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MétododeNewton-RaphsonForm.Designer.cs">
-      <DependentUpon>MétododeNewton-RaphsonForm.cs</DependentUpon>
+    <Compile Include="Form metodos raices\MetodoSecante.Designer.cs">
+      <DependentUpon>MetodoSecante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form metodos raices\MétodoTangente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form metodos raices\MétodoTangente.Designer.cs">
+      <DependentUpon>MétodoTangente.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MetodosCerradosForm.cs">
+    <Compile Include="Form metodos raices\MetodosCerradosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MetodosCerradosForm.Designer.cs">
+    <Compile Include="Form metodos raices\MetodosCerradosForm.Designer.cs">
       <DependentUpon>MetodosCerradosForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="InicioForm.resx">
       <DependentUpon>InicioForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MétododeNewton-RaphsonForm.resx">
-      <DependentUpon>MétododeNewton-RaphsonForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form metodos raices\MetodoSecante.resx">
+      <DependentUpon>MetodoSecante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form metodos raices\MétodoTangente.resx">
+      <DependentUpon>MétodoTangente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,7 +92,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="MetodosCerradosForm.resx">
+    <EmbeddedResource Include="Form metodos raices\MetodosCerradosForm.resx">
       <DependentUpon>MetodosCerradosForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

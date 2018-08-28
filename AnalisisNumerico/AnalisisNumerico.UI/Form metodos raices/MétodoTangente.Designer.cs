@@ -1,6 +1,6 @@
 ﻿namespace AnalisisNumerico.UI
 {
-    partial class MétododeNewton_RaphsonForm
+    partial class MetodoTangente
     {
         /// <summary>
         /// Required designer variable.
@@ -89,6 +89,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Window;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(36, 388);
             this.label5.Name = "label5";
@@ -121,7 +122,7 @@
             this.textBox_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Funcion.Location = new System.Drawing.Point(147, 28);
             this.textBox_Funcion.Name = "textBox_Funcion";
-            this.textBox_Funcion.Size = new System.Drawing.Size(169, 34);
+            this.textBox_Funcion.Size = new System.Drawing.Size(224, 34);
             this.textBox_Funcion.TabIndex = 7;
             // 
             // textBox_Iteraciones
@@ -185,20 +186,20 @@
             // Calcular
             // 
             this.Calcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Calcular.Location = new System.Drawing.Point(803, 270);
+            this.Calcular.Location = new System.Drawing.Point(776, 274);
             this.Calcular.Name = "Calcular";
-            this.Calcular.Size = new System.Drawing.Size(179, 55);
+            this.Calcular.Size = new System.Drawing.Size(198, 64);
             this.Calcular.TabIndex = 15;
             this.Calcular.Text = "Calcular";
             this.Calcular.UseVisualStyleBackColor = true;
             this.Calcular.Click += new System.EventHandler(this.Calcular_Click);
             // 
-            // MétododeNewton_RaphsonForm
+            // MetodoTangente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(1421, 656);
+            this.ClientSize = new System.Drawing.Size(1146, 656);
             this.Controls.Add(this.Calcular);
             this.Controls.Add(this.textBox_Merror);
             this.Controls.Add(this.textBox_Miteraciones);
@@ -215,7 +216,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "MétododeNewton_RaphsonForm";
+            this.Name = "MetodoTangente";
             this.Text = "MétododeNewton_RaphsonForm";
             this.ResumeLayout(false);
             this.PerformLayout();

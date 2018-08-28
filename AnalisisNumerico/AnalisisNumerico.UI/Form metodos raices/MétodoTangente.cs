@@ -12,15 +12,18 @@ using AnalisisNumerico.Entidades;
 
 namespace AnalisisNumerico.UI
 {
-    public partial class MétododeNewton_RaphsonForm : Form
+    public partial class MetodoTangente : Form
     {
         private readonly IMetodosRaices metodosRaices;
 
-        public MétododeNewton_RaphsonForm(IMetodosRaices metodosRaices)
+        public MetodoTangente(IMetodosRaices metodosRaices)
         {            
             this.metodosRaices = metodosRaices;           
             InitializeComponent();
             textBox_Funcion.Text = "f(x)=";
+            textBox_Funcion.Text = "f(x)=";
+            textBox_Iteraciones.Text = "100";
+            textBox_Toleranciia.Text = "0,0001";
         }
 
         private void Calcular_Click(object sender, EventArgs e)
@@ -41,7 +44,7 @@ namespace AnalisisNumerico.UI
                 parametros.Tolerancia = double.Parse(textBox_Toleranciia.Text);
                 parametros.ValorInicial = double.Parse(textBox_ValorInicial.Text);
 
-                 var resultado = metodosRaices.MetodoNewton(parametros);               
+                 var resultado = metodosRaices.MetodoTangente(parametros);               
 
                 if (resultado.Texto == "")
                 {
@@ -51,7 +54,7 @@ namespace AnalisisNumerico.UI
                 }
                 else
                 {
-                    MessageBox.Show("Los extremos ingresados no son válidos", "Notificación", MessageBoxButtons.OK);
+                    MessageBox.Show("Error al calcular la raiz", "Notificación", MessageBoxButtons.OK);
                 }
             }
         }
