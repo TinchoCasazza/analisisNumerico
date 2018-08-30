@@ -61,17 +61,16 @@ namespace AnalisisNumerico.Logica
 
                     //var argumentoXr = new Argument("x", Xr);
                     //var expresionXr = new Expression(nombre, funcion, argumentoXr);
-                    var imagenvalxer = RetornarImagen(parametros.Funcion, Xr);
-
-                    if ((Math.Abs(imagenvalxer) < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones) || (Math.Abs(Erel) < parametros.Tolerancia))
+              
+                    if ((Math.Abs(RetornarImagen(parametros.Funcion, Xr)) < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones) || (Math.Abs(Erel) < parametros.Tolerancia))
                     {
                         resultado.Raiz = Xr;
                         termino = true;
                     }
                     else
                     {
-                        var imagenvalorinicial = expresion1.calculate();
-                        var imagenvalorxr = RetornarImagen(parametros.Funcion, Xr);
+                        //var imagenvalorinicial = expresion1.calculate();
+                        //var imagenvalorxr = RetornarImagen(parametros.Funcion, Xr);
                         if ((expresion1.calculate()) * RetornarImagen(parametros.Funcion, Xr) > 0)
                         {
                             parametros.ValorInicial = Xr;
@@ -92,8 +91,8 @@ namespace AnalisisNumerico.Logica
 
         private double RetornarImagen(string funcion, double xr)
         {
-            var imagen = new Function(funcion).calculate(xr);
-            return imagen;
+            //var imagen = new Function(funcion).calculate(xr);
+            return new Function(funcion).calculate(xr);
         }
 
         private double CalcularXrBiseccion(double xi, double xd)
@@ -191,9 +190,12 @@ namespace AnalisisNumerico.Logica
 
             double Xant = 0;
 
+            var imagen1 = RetornarImagen(parametros.Funcion, Xini1);
+            var imagen11 = RetornarImagen(parametros.Funcion, Xini0);
+
             Xini2 = ((RetornarImagen(parametros.Funcion, Xini1) * Xini0) - (RetornarImagen(parametros.Funcion, Xini0) * Xini1) / (RetornarImagen(parametros.Funcion, Xini1) - RetornarImagen(parametros.Funcion, Xini0)));
 
-            if (RetornarImagen(parametros.Funcion, Xini0) * RetornarImagen(parametros.Funcion, Xini1)) == 0
+            if ((RetornarImagen(parametros.Funcion, Xini0) * RetornarImagen(parametros.Funcion, Xini1)) == 0)
             {
                 // x1 es raiz
                 resultado.Raiz = Xini0;
@@ -205,7 +207,7 @@ namespace AnalisisNumerico.Logica
 
                 while (!termino)
                 {
-                    
+
                     cInteraciones++;
                     Xant = Xini2;
 

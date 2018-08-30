@@ -41,6 +41,7 @@ namespace AnalisisNumerico.UI
                 parametros.Iteraciones = int.Parse(textBox_Iteraciones.Text);
                 parametros.Tolerancia = double.Parse(textBox_Tolerancia.Text);
                 parametros.ValorInicial = double.Parse(textBox_ValorInicial.Text);
+                parametros.ValorFinal = double.Parse(textBox_ValorFinal.Text);
 
                 var resultado = metodosRaices.MetodoSecante(parametros);
 
