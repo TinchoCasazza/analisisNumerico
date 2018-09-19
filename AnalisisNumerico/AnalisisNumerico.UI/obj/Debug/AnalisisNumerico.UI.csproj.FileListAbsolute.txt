@@ -38,3 +38,4 @@ C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\D
 C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.MetodosCerradosForm.resources
 C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.MetodoSecante.resources
 C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.MetodoTangente.resources
+C:\Users\Juan Aira\Desktop\TpAnalisis\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.Form_Sistemas_de_ecuaciones.GaussJordan.resources

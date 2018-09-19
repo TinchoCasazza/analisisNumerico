@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form Sistemas de ecuaciones\GaussJordan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Sistemas de ecuaciones\GaussJordan.Designer.cs">
+      <DependentUpon>GaussJordan.cs</DependentUpon>
+    </Compile>
     <Compile Include="InicioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Form metodos raices\MetodosCerradosForm.Designer.cs">
       <DependentUpon>MetodosCerradosForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form Sistemas de ecuaciones\GaussJordan.resx">
+      <DependentUpon>GaussJordan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InicioForm.resx">
       <DependentUpon>InicioForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,5 +128,6 @@
       <Name>AnalisisNumerico.Logica</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

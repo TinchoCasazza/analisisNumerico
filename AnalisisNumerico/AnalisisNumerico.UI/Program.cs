@@ -4,11 +4,12 @@ using SimpleInjector;
 using System;
 using System.Windows.Forms;
 
+
 namespace AnalisisNumerico.UI
 {
     static class Program
     {
-        private static Container container;
+         internal static Container container;
 
         /// <summary>
         /// The main entry point for the application.
@@ -29,7 +30,7 @@ namespace AnalisisNumerico.UI
 
             // Register your types, for instance:
             container.Register<IMetodosRaices, MetodosRaices>();
-            container.Register<InicioForm>();
+            //container.Register<ISistemaDeEcuaciones, SistemaDeEcuaciones>();
         }
     }
 }

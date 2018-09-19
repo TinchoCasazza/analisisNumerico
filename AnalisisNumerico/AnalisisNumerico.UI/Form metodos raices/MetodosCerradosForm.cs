@@ -14,7 +14,8 @@ namespace AnalisisNumerico.UI
     public partial class MetodosCerradosForm : Form
     {
         private readonly IMetodosRaices metodosRaices;
-        private bool okey;
+
+        public bool okey { get; set; }
 
         public MetodosCerradosForm(IMetodosRaices metodosRaices, bool pok)
         {

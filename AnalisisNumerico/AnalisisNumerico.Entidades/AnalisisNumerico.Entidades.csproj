@@ -44,6 +44,9 @@
     <Compile Include="Raices\ParametrosRaices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Raices\ResultadoRaices.cs" />
+    <Compile Include="Sistema de ecuaciones\ISistemaDeEcuaciones.cs" />
+    <Compile Include="Sistema de ecuaciones\ParametrosEcuaciones.cs" />
+    <Compile Include="Sistema de ecuaciones\ResultadoEcuaciones.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
