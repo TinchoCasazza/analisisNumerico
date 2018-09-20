@@ -30,7 +30,7 @@ namespace AnalisisNumerico.UI
 
             // Register your types, for instance:
             container.Register<IMetodosRaices, MetodosRaices>();
-            //container.Register<ISistemaDeEcuaciones, SistemaDeEcuaciones>();
+            container.Register<ISistemaDeEcuaciones,SistemaDeEcuaciones>();
         }
     }
 }

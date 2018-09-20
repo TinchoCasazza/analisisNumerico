@@ -10,5 +10,6 @@ namespace AnalisisNumerico.Entidades
     {
         public int NumIncognitas { get; set; }
         public List<double> Coeficientes { get; set; }
+        public double Tolerancia { get; set; }
     }
 }

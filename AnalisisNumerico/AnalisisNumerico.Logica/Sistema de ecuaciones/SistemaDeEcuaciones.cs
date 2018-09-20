@@ -7,7 +7,7 @@ using AnalisisNumerico.Entidades;
 
 namespace AnalisisNumerico.Logica
 {
-    public class SistemaDeEcuaciones
+    public class SistemaDeEcuaciones: ISistemaDeEcuaciones
     {
         public ResultadoEcuaciones GaussJordan(ParametrosEcuaciones parametros)
         {
@@ -186,6 +186,59 @@ namespace AnalisisNumerico.Logica
                     columna++;
                 }
             }
+        }
+
+
+
+
+
+
+        public ResultadoEcuaciones GaussSeidel(ParametrosEcuaciones parametros)
+        {
+
+            var resultado = new ResultadoEcuaciones();
+
+            var listaResultados = new List<double>();
+            var listaResultadosAnterior = new List<double>();
+            double tolerancia = parametros.Tolerancia;
+
+            //  Cargo matriz pero no se si es necesario
+            double[,] matriz = new double[parametros.NumIncognitas, parametros.NumIncognitas + 1];
+
+            var columna = 0;
+            var fila = 0;
+
+            foreach (var item in parametros.Coeficientes)
+            {
+                matriz[fila, columna] = item;
+                if (columna < parametros.NumIncognitas)
+                {
+                    columna++;
+                }
+                else
+                {
+                    fila++;
+                    columna = 0;
+                    listaResultados.Add(0);
+                }
+            }
+            //
+
+            double errorRelativo = 0.1;
+            bool corte = false;
+
+            while (errorRelativo < tolerancia && !corte)
+            {
+                
+            }
+
+
+
+
+
+            resultado.Resultados = listaResultados;
+
+            return resultado;
         }
     }
 }

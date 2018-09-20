@@ -9,5 +9,6 @@ namespace AnalisisNumerico.Entidades
     public interface ISistemaDeEcuaciones
     {
         ResultadoEcuaciones GaussJordan(ParametrosEcuaciones parametros);
+        ResultadoEcuaciones GaussSeidel(ParametrosEcuaciones parametros);
     }
 }

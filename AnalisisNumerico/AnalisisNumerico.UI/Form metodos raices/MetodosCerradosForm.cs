@@ -17,14 +17,18 @@ namespace AnalisisNumerico.UI
 
         public bool okey { get; set; }
 
-        public MetodosCerradosForm(IMetodosRaices metodosRaices, bool pok)
+        public MetodosCerradosForm(IMetodosRaices metodosRaices)
         {
             this.metodosRaices = metodosRaices;
             InitializeComponent();
             textBox_Funcion.Text = "f(x)=";
             textBox_Iteraciones.Text = "100";
             textBox_Tolerancia.Text = "0,0001";
-            okey = pok;
+        }
+
+        public void SetPok(bool esBiseccion)
+        {
+            okey = esBiseccion;
         }
 
         private void button_Calcular_Click(object sender, EventArgs e)
