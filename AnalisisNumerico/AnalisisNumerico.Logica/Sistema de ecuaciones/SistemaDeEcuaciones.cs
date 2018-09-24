@@ -211,9 +211,14 @@ namespace AnalisisNumerico.Logica
             foreach (var item in parametros.Coeficientes)
             {
                 matriz[fila, columna] = item;
+
                 if (columna < parametros.NumIncognitas)
                 {
+                    if (columna == fila){
+
+                    }
                     columna++;
+
                 }
                 else
                 {
@@ -229,13 +234,44 @@ namespace AnalisisNumerico.Logica
 
             while (errorRelativo < tolerancia && !corte)
             {
-                
+                for (int f = 0; f < parametros.NumIncognitas; f++)
+                {
+                    double valorAcumulado = 0;
+
+                    for (int c = 0; c < parametros.NumIncognitas + 1; c++)
+                    {
+                        if ( c == f ){
+                            listaResultadosAnterior[f] = matriz[f, c] ;
+                        }
+                        else{
+
+                            if (c != parametros.NumIncognitas +1){
+                                valorAcumulado = listaResultadosAnterior[f] * matriz[f,c] + valorAcumulado;
+                            }
+                            else {
+                                listaResultados[f] = ( matriz[f, c] - valorAcumulado )  / listaResultadosAnterior[f];
+                            }
+                                
+                        }
+
+                    }
+                }
+
+                double validacion = 0;
+                int contador = 0;
+                foreach (var item in listaResultados)
+                {
+                    validacion = ( item - listaResultadosAnterior[contador] ) / item;
+                    corte = true;
+                    contador++;
+                    
+                    if (validacion > tolerancia ){
+                        corte = false;
+                        break;    
+                    }
+                }
+
             }
-
-
-
-
-
             resultado.Resultados = listaResultados;
 
             return resultado;
