@@ -33,12 +33,15 @@
             this.textBox_NumIncognitas = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonConfirmar = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // button_Calcular
             // 
-            this.button_Calcular.Location = new System.Drawing.Point(959, 142);
+            this.button_Calcular.Location = new System.Drawing.Point(950, 38);
             this.button_Calcular.Name = "button_Calcular";
             this.button_Calcular.Size = new System.Drawing.Size(162, 37);
             this.button_Calcular.TabIndex = 0;
@@ -84,12 +87,29 @@
             this.buttonConfirmar.UseVisualStyleBackColor = true;
             this.buttonConfirmar.Click += new System.EventHandler(this.buttonConfirmar_Click);
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.dataGridView2.Location = new System.Drawing.Point(938, 155);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(149, 366);
+            this.dataGridView2.TabIndex = 6;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Resultados";
+            this.Column1.Name = "Column1";
+            // 
             // GaussJordan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(1190, 572);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.buttonConfirmar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox_NumIncognitas);
@@ -98,6 +118,7 @@
             this.Name = "GaussJordan";
             this.Text = "GaussJordan";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +131,7 @@
         private System.Windows.Forms.TextBox textBox_NumIncognitas;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonConfirmar;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

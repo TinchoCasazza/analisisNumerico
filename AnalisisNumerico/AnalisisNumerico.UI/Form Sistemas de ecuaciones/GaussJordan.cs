@@ -30,14 +30,30 @@ namespace AnalisisNumerico.UI.Form_Sistemas_de_ecuaciones
             //coef.Add(2); coef.Add(1); coef.Add(-1); coef.Add(0);
             //coef.Add(2); coef.Add(3); coef.Add(-1); coef.Add(3);
 
-            for (int f = 0; f < int.Parse(textBox_NumIncognitas.Text); f++)
+            //recorre filas
+            var cont = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                for (int c = 0; c < int.Parse(textBox_NumIncognitas.Text)+1; c++)
+                cont++;
+                //recorre las celdas de la columnas
+                if (cont <= int.Parse(textBox_NumIncognitas.Text))
                 {
+                    foreach (DataGridViewCell cel in row.Cells)
+                    {
+                        coef.Add(Convert.ToDouble(cel.Value));
+                    }
                 }
             }
 
-            metodosSistemaEcuaciones.GaussJordan(prueba);
+            prueba.Coeficientes = coef;
+            var resul= metodosSistemaEcuaciones.GaussJordan(prueba);
+
+
+            foreach (var item in resul.Resultados)
+            {
+                dataGridView2.Rows.Add(item);
+            }
+        
 
         }
 

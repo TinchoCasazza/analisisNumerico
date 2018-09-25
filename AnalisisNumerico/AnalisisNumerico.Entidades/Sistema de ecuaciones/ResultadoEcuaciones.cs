@@ -9,5 +9,9 @@ namespace AnalisisNumerico.Entidades
     public class ResultadoEcuaciones
     {
         public List<double> Resultados { get; set; }
+        public ResultadoEcuaciones()
+        {
+            this.Resultados = new List<double>();
+        }
     }
 }

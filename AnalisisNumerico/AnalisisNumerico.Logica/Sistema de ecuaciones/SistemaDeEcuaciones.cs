@@ -7,7 +7,7 @@ using AnalisisNumerico.Entidades;
 
 namespace AnalisisNumerico.Logica
 {
-    public class SistemaDeEcuaciones: ISistemaDeEcuaciones
+    public class SistemaDeEcuaciones : ISistemaDeEcuaciones
     {
         public ResultadoEcuaciones GaussJordan(ParametrosEcuaciones parametros)
         {
@@ -188,11 +188,6 @@ namespace AnalisisNumerico.Logica
             }
         }
 
-
-
-
-
-
         public ResultadoEcuaciones GaussSeidel(ParametrosEcuaciones parametros)
         {
 
@@ -214,11 +209,7 @@ namespace AnalisisNumerico.Logica
 
                 if (columna < parametros.NumIncognitas)
                 {
-                    if (columna == fila){
-
-                    }
                     columna++;
-
                 }
                 else
                 {
@@ -228,30 +219,45 @@ namespace AnalisisNumerico.Logica
                 }
             }
             //
-
+            for (int i = 0; i < parametros.NumIncognitas; i++)
+            {
+                listaResultadosAnterior.Add(0);
+            }
             double errorRelativo = 0.1;
             bool corte = false;
 
-            while (errorRelativo < tolerancia && !corte)
+            while (errorRelativo > tolerancia && !corte)
             {
+                var cont = 0;
+                foreach (var item in listaResultados)
+                {
+                    listaResultadosAnterior[cont] = item;
+                    cont++;
+                }
+
+                //  listaResultadosAnterior = listaResultados;
+
                 for (int f = 0; f < parametros.NumIncognitas; f++)
                 {
                     double valorAcumulado = 0;
 
                     for (int c = 0; c < parametros.NumIncognitas + 1; c++)
                     {
-                        if ( c == f ){
-                            listaResultadosAnterior[f] = matriz[f, c] ;
+                        if (c == f)
+                        {
+                            listaResultados[f] = matriz[f, c];
                         }
-                        else{
+                        else
+                        {
+                            if (c != parametros.NumIncognitas)
+                            {
+                                valorAcumulado = listaResultados[c] * matriz[f, c] + valorAcumulado;
+                            }
+                            else
+                            {
+                                listaResultados[f] = (matriz[f, c] - valorAcumulado) / listaResultados[f];
+                            }
 
-                            if (c != parametros.NumIncognitas +1){
-                                valorAcumulado = listaResultadosAnterior[f] * matriz[f,c] + valorAcumulado;
-                            }
-                            else {
-                                listaResultados[f] = ( matriz[f, c] - valorAcumulado )  / listaResultadosAnterior[f];
-                            }
-                                
                         }
 
                     }
@@ -261,13 +267,14 @@ namespace AnalisisNumerico.Logica
                 int contador = 0;
                 foreach (var item in listaResultados)
                 {
-                    validacion = ( item - listaResultadosAnterior[contador] ) / item;
+                    validacion = (item - listaResultadosAnterior[contador]) / item;
                     corte = true;
                     contador++;
-                    
-                    if (validacion > tolerancia ){
+
+                    if (validacion > tolerancia)
+                    {
                         corte = false;
-                        break;    
+                        break;
                     }
                 }
 
