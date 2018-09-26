@@ -37,9 +37,12 @@
             this.reglaFalsaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newtonRaphsonToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.secanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ecuacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gaussJordanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gaussSeidelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.regresionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.minimosCuadradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +54,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.raicesToolStripMenuItem,
-            this.ecuacionesToolStripMenuItem});
+            this.ecuacionesToolStripMenuItem,
+            this.regresionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(182, 461);
@@ -83,14 +87,14 @@
             // bisecciónToolStripMenuItem
             // 
             this.bisecciónToolStripMenuItem.Name = "bisecciónToolStripMenuItem";
-            this.bisecciónToolStripMenuItem.Size = new System.Drawing.Size(216, 32);
+            this.bisecciónToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
             this.bisecciónToolStripMenuItem.Text = "Bisección";
             this.bisecciónToolStripMenuItem.Click += new System.EventHandler(this.bisecciónToolStripMenuItem_Click);
             // 
             // reglaFalsaToolStripMenuItem1
             // 
             this.reglaFalsaToolStripMenuItem1.Name = "reglaFalsaToolStripMenuItem1";
-            this.reglaFalsaToolStripMenuItem1.Size = new System.Drawing.Size(216, 32);
+            this.reglaFalsaToolStripMenuItem1.Size = new System.Drawing.Size(185, 32);
             this.reglaFalsaToolStripMenuItem1.Text = "Regla Falsa";
             this.reglaFalsaToolStripMenuItem1.Click += new System.EventHandler(this.reglaFalsaToolStripMenuItem1_Click);
             // 
@@ -119,22 +123,12 @@
             this.secanteToolStripMenuItem.Text = "Secante";
             this.secanteToolStripMenuItem.Click += new System.EventHandler(this.secanteToolStripMenuItem_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(182, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(713, 461);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // ecuacionesToolStripMenuItem
             // 
             this.ecuacionesToolStripMenuItem.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ecuacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gaussJordanToolStripMenuItem});
+            this.gaussJordanToolStripMenuItem,
+            this.gaussSeidelToolStripMenuItem});
             this.ecuacionesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ecuacionesToolStripMenuItem.Name = "ecuacionesToolStripMenuItem";
             this.ecuacionesToolStripMenuItem.Size = new System.Drawing.Size(169, 45);
@@ -148,6 +142,45 @@
             this.gaussJordanToolStripMenuItem.Size = new System.Drawing.Size(216, 32);
             this.gaussJordanToolStripMenuItem.Text = "Gauss Jordan";
             this.gaussJordanToolStripMenuItem.Click += new System.EventHandler(this.gaussJordanToolStripMenuItem_Click);
+            // 
+            // gaussSeidelToolStripMenuItem
+            // 
+            this.gaussSeidelToolStripMenuItem.BackColor = System.Drawing.SystemColors.GrayText;
+            this.gaussSeidelToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gaussSeidelToolStripMenuItem.Name = "gaussSeidelToolStripMenuItem";
+            this.gaussSeidelToolStripMenuItem.Size = new System.Drawing.Size(216, 32);
+            this.gaussSeidelToolStripMenuItem.Text = "Gauss Seidel";
+            this.gaussSeidelToolStripMenuItem.Click += new System.EventHandler(this.gaussSeidelToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(182, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(713, 461);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // regresionToolStripMenuItem
+            // 
+            this.regresionToolStripMenuItem.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.regresionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.minimosCuadradosToolStripMenuItem});
+            this.regresionToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regresionToolStripMenuItem.Name = "regresionToolStripMenuItem";
+            this.regresionToolStripMenuItem.Size = new System.Drawing.Size(169, 45);
+            this.regresionToolStripMenuItem.Text = "Regresion";
+            // 
+            // minimosCuadradosToolStripMenuItem
+            // 
+            this.minimosCuadradosToolStripMenuItem.BackColor = System.Drawing.SystemColors.GrayText;
+            this.minimosCuadradosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimosCuadradosToolStripMenuItem.Name = "minimosCuadradosToolStripMenuItem";
+            this.minimosCuadradosToolStripMenuItem.Size = new System.Drawing.Size(268, 32);
+            this.minimosCuadradosToolStripMenuItem.Text = "Minimos cuadrados";
+            this.minimosCuadradosToolStripMenuItem.Click += new System.EventHandler(this.minimosCuadradosToolStripMenuItem_Click);
             // 
             // InicioForm
             // 
@@ -181,6 +214,9 @@
         private System.Windows.Forms.ToolStripMenuItem raicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ecuacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gaussJordanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gaussSeidelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem regresionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem minimosCuadradosToolStripMenuItem;
     }
 }
 

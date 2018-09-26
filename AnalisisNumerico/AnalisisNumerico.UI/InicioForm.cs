@@ -55,7 +55,21 @@ namespace AnalisisNumerico.UI
         {
             var formGaussJordan = Program.container.GetInstance<GaussJordan>();
             formGaussJordan.Owner = this;
-            formGaussJordan.Show();
+            formGaussJordan.Show();           
+        }
+
+        private void gaussSeidelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formGaussSeidel = Program.container.GetInstance<GaussSeidel>();
+            formGaussSeidel.Owner = this;
+            formGaussSeidel.Show();
+        }
+
+        private void minimosCuadradosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formMinimosCuadrados = Program.container.GetInstance<FormRegresion>();
+            formMinimosCuadrados.Owner = this;
+            formMinimosCuadrados.Show();
         }
     }
 }

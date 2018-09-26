@@ -41,7 +41,8 @@
             // 
             // button_Calcular
             // 
-            this.button_Calcular.Location = new System.Drawing.Point(950, 38);
+            this.button_Calcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Calcular.Location = new System.Drawing.Point(938, 46);
             this.button_Calcular.Name = "button_Calcular";
             this.button_Calcular.Size = new System.Drawing.Size(162, 37);
             this.button_Calcular.TabIndex = 0;
@@ -95,13 +96,14 @@
             this.dataGridView2.Location = new System.Drawing.Point(938, 155);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(149, 366);
+            this.dataGridView2.Size = new System.Drawing.Size(207, 366);
             this.dataGridView2.TabIndex = 6;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Resultados";
             this.Column1.Name = "Column1";
+            this.Column1.Width = 160;
             // 
             // GaussJordan
             // 

@@ -73,6 +73,9 @@ namespace AnalisisNumerico.Logica
                 }
             }
 
+            resultado.Resultados = null;
+            resultado.Resultados = new List<double>();
+
             for (int f = 0; f < parametros.NumIncognitas; f++)
             {
                 for (int c = 0; c < parametros.NumIncognitas + 1; c++)
@@ -133,7 +136,7 @@ namespace AnalisisNumerico.Logica
             while (!corte)
             {
                 auxFila++;
-                if (m[fila, columna] != 0)
+                if (fila < numIncognitas)
                 {
                     var valor = m[fila, columna];
 

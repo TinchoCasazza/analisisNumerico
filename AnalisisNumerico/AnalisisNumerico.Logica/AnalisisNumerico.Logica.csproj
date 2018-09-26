@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Regresion\MetodosRegresion.cs" />
     <Compile Include="Raices\MetodosRaices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sistema de ecuaciones\SistemaDeEcuaciones.cs" />

@@ -54,6 +54,18 @@
     <Compile Include="Form Sistemas de ecuaciones\GaussJordan.Designer.cs">
       <DependentUpon>GaussJordan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form Sistemas de ecuaciones\GaussSeidel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Sistemas de ecuaciones\GaussSeidel.Designer.cs">
+      <DependentUpon>GaussSeidel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regresion\FormRegresion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regresion\FormRegresion.Designer.cs">
+      <DependentUpon>FormRegresion.cs</DependentUpon>
+    </Compile>
     <Compile Include="InicioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +94,12 @@
     </Compile>
     <EmbeddedResource Include="Form Sistemas de ecuaciones\GaussJordan.resx">
       <DependentUpon>GaussJordan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form Sistemas de ecuaciones\GaussSeidel.resx">
+      <DependentUpon>GaussSeidel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regresion\FormRegresion.resx">
+      <DependentUpon>FormRegresion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioForm.resx">
       <DependentUpon>InicioForm.cs</DependentUpon>
