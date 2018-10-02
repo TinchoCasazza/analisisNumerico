@@ -37,6 +37,7 @@
             this.label_Recta = new System.Windows.Forms.Label();
             this.textBox_Recta = new System.Windows.Forms.TextBox();
             this.button_Calcular = new System.Windows.Forms.Button();
+            this.button_Limpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,12 +123,24 @@
             this.button_Calcular.UseVisualStyleBackColor = true;
             this.button_Calcular.Click += new System.EventHandler(this.button_Calcular_Click);
             // 
+            // button_Limpiar
+            // 
+            this.button_Limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Limpiar.Location = new System.Drawing.Point(743, 443);
+            this.button_Limpiar.Name = "button_Limpiar";
+            this.button_Limpiar.Size = new System.Drawing.Size(160, 38);
+            this.button_Limpiar.TabIndex = 7;
+            this.button_Limpiar.Text = "Limpiar";
+            this.button_Limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
+            // 
             // FormRegresion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(1073, 588);
+            this.Controls.Add(this.button_Limpiar);
             this.Controls.Add(this.button_Calcular);
             this.Controls.Add(this.textBox_Recta);
             this.Controls.Add(this.label_Recta);
@@ -154,5 +167,6 @@
         private System.Windows.Forms.Label label_Recta;
         private System.Windows.Forms.TextBox textBox_Recta;
         private System.Windows.Forms.Button button_Calcular;
+        private System.Windows.Forms.Button button_Limpiar;
     }
 }

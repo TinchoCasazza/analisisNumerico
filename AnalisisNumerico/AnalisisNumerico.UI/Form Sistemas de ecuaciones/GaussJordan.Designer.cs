@@ -35,6 +35,7 @@
             this.buttonConfirmar = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_Limpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -105,12 +106,24 @@
             this.Column1.Name = "Column1";
             this.Column1.Width = 160;
             // 
+            // button_Limpiar
+            // 
+            this.button_Limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Limpiar.Location = new System.Drawing.Point(968, 537);
+            this.button_Limpiar.Name = "button_Limpiar";
+            this.button_Limpiar.Size = new System.Drawing.Size(156, 38);
+            this.button_Limpiar.TabIndex = 7;
+            this.button_Limpiar.Text = "Limpiar";
+            this.button_Limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
+            // 
             // GaussJordan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
-            this.ClientSize = new System.Drawing.Size(1190, 572);
+            this.ClientSize = new System.Drawing.Size(1193, 587);
+            this.Controls.Add(this.button_Limpiar);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.buttonConfirmar);
             this.Controls.Add(this.dataGridView1);
@@ -135,5 +148,6 @@
         private System.Windows.Forms.Button buttonConfirmar;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Button button_Limpiar;
     }
 }

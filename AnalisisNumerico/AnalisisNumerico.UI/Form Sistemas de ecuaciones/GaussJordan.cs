@@ -62,5 +62,13 @@ namespace AnalisisNumerico.UI.Form_Sistemas_de_ecuaciones
             dataGridView1.RowCount = int.Parse(textBox_NumIncognitas.Text);
             dataGridView1.ColumnCount = int.Parse(textBox_NumIncognitas.Text) + 1;
         }
+
+        private void button_Limpiar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.RowCount = 1;
+            dataGridView1.ColumnCount =  1;
+            dataGridView2.RowCount = 1;
+            textBox_NumIncognitas.Text = "";
+        }
     }
 }

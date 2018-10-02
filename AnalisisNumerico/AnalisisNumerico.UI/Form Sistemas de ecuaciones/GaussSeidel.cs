@@ -59,5 +59,13 @@ namespace AnalisisNumerico.UI
             }
 
         }
+
+        private void button_limpiar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.RowCount = 1;
+            dataGridView1.ColumnCount = 1;
+            dataGridView2.RowCount = 1;
+            textBox_Numincorgnitas.Text = "";
+        }
     }
 }

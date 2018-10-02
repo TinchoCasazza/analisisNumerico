@@ -34,9 +34,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button_Calcular = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label_Tolerancia = new System.Windows.Forms.Label();
             this.textBox_Tolerancia = new System.Windows.Forms.TextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_limpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -76,13 +77,13 @@
             this.dataGridView1.Location = new System.Drawing.Point(33, 155);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(689, 344);
+            this.dataGridView1.Size = new System.Drawing.Size(782, 344);
             this.dataGridView1.TabIndex = 3;
             // 
             // button_Calcular
             // 
             this.button_Calcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Calcular.Location = new System.Drawing.Point(784, 49);
+            this.button_Calcular.Location = new System.Drawing.Point(859, 49);
             this.button_Calcular.Name = "button_Calcular";
             this.button_Calcular.Size = new System.Drawing.Size(153, 35);
             this.button_Calcular.TabIndex = 4;
@@ -95,11 +96,17 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
-            this.dataGridView2.Location = new System.Drawing.Point(784, 155);
+            this.dataGridView2.Location = new System.Drawing.Point(859, 155);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(249, 353);
             this.dataGridView2.TabIndex = 5;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Resultados";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 200;
             // 
             // label_Tolerancia
             // 
@@ -119,18 +126,24 @@
             this.textBox_Tolerancia.Size = new System.Drawing.Size(116, 30);
             this.textBox_Tolerancia.TabIndex = 7;
             // 
-            // Column1
+            // button_limpiar
             // 
-            this.Column1.HeaderText = "Resultados";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
+            this.button_limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_limpiar.Location = new System.Drawing.Point(904, 526);
+            this.button_limpiar.Name = "button_limpiar";
+            this.button_limpiar.Size = new System.Drawing.Size(152, 38);
+            this.button_limpiar.TabIndex = 8;
+            this.button_limpiar.Text = "Limpiar";
+            this.button_limpiar.UseVisualStyleBackColor = true;
+            this.button_limpiar.Click += new System.EventHandler(this.button_limpiar_Click);
             // 
             // GaussSeidel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
-            this.ClientSize = new System.Drawing.Size(1060, 561);
+            this.ClientSize = new System.Drawing.Size(1132, 576);
+            this.Controls.Add(this.button_limpiar);
             this.Controls.Add(this.textBox_Tolerancia);
             this.Controls.Add(this.label_Tolerancia);
             this.Controls.Add(this.dataGridView2);
@@ -159,5 +172,6 @@
         private System.Windows.Forms.Label label_Tolerancia;
         private System.Windows.Forms.TextBox textBox_Tolerancia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Button button_limpiar;
     }
 }

@@ -59,6 +59,14 @@ namespace AnalisisNumerico.UI
             var resul = metodosRegresion.MinimosCuadrados(paramtros);
 
             textBox_Recta.Text = string.Format("  "+resul.Pendiente.ToString("N2")+"x + "+resul.OrdenadaOrigen.ToString("N2"));
+
+        }
+
+        private void button_Limpiar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.RowCount = 1;
+            textBox_Recta.Text = "";
+            textBox_cantPares.Text = "";
         }
     }
 }
