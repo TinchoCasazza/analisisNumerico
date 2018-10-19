@@ -180,12 +180,12 @@ namespace AnalisisNumerico.Logica
             return r;
         }
 
-        public ResultadoLagranje PolinomioLagranje(ParametrosRegresion parametros , double valorX)
+        public ResultadoLagranje PolinomioLagranje(ParametrosRegresion parametros, double valorX)
         {
             var resultado = new ResultadoLagranje();
 
             double x = valorX;
-            double sumaY = 0; 
+            double sumaY = 0;
 
             for (int i = 0; i < parametros.X.Count; i++)
             {
@@ -194,23 +194,23 @@ namespace AnalisisNumerico.Logica
 
                 for (int j = 0; j < parametros.X.Count; j++)
                 {
-                   
+
                     if (i != j)
                     {
-                        numerador = (x - parametros.X[j]) * numerador ;
+                        numerador = (x - parametros.X[j]) * numerador;
                         denominador = (parametros.X[i] - parametros.X[j]) * denominador;
                     }
                 }
 
                 sumaY = (numerador / denominador) * parametros.X[i] + sumaY;
-            
+
             }
-            
-            //resultado.
+
+            resultado.Interpolacion = sumaY;
 
             return resultado;
         }
 
-   
+
     }
 }
