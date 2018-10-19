@@ -45,6 +45,141 @@ namespace AnalisisNumerico.Logica
             return resultado;
         }
 
+
+        public ResultadoRegresion MinimosCuadradosPolinomioGradoN(ParametrosRegresion parametros)
+        {
+            var resul = new ResultadoRegresion();
+
+            double sumatoriaX = parametros.X.Sum();
+            double sumatoriaY = parametros.Y.Sum();
+            double r = 0;
+
+            while (parametros.Grado <= 10 || r <= 85)
+            {
+                double[,] matriz = new double[parametros.Grado + 1, parametros.Grado + 2];
+
+                resul = null;
+                resul = new ResultadoRegresion();
+
+                var pot = 0;
+                for (int columna = 0; columna < parametros.Grado + 1; columna++)
+                {
+                    if (columna > 0)
+                    {
+                        pot = columna;
+                        for (int i = 0; i < parametros.Grado + 1; i++)
+                        {
+                            matriz[i, columna] = RetornarSumXpotencia(parametros.X, pot);
+                            pot++;
+                        }
+                    }
+                    else if (columna == 0)
+                    {
+                        pot = 1;
+                        matriz[0, 0] = parametros.NumPares + 1;
+                        for (int i = 1; i < parametros.Grado + 1; i++)
+                        {
+                            matriz[i, columna] = RetornarSumXpotencia(parametros.X, pot);
+                            pot++;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < parametros.Grado + 1; i++)
+                {
+                    if (i != 0)
+                    {
+                        pot = 1;
+                        matriz[i, parametros.Grado + 1] = RetornarXPorY(i, parametros.X, parametros.Y);
+                        pot++;
+                    }
+                    else
+                    {
+                        matriz[i, parametros.Grado + 1] = parametros.Y.Sum();
+                    }
+
+                }
+
+                var SistemaDeEcucuaciones = new SistemaDeEcuaciones();
+                var param = new ParametrosEcuaciones();
+                param.NumIncognitas = parametros.Grado + 1;
+
+                for (int i = 0; i < parametros.Grado + 1; i++)
+                {
+                    for (int c = 0; c < parametros.Grado + 2; c++)
+                    {
+                        param.Coeficientes.Add(matriz[i, c]);
+                    }
+                }
+
+                var resultadoGauss = SistemaDeEcucuaciones.GaussJordan(param);
+
+                r = CalcularR(parametros.X, parametros.Y, resultadoGauss.Resultados);
+
+                parametros.Grado++;
+
+                resul.Efectividad = r;
+                resul.Resul = resultadoGauss.Resultados;
+                resul.GradoFinal = parametros.Grado;
+            }
+
+            return resul;
+        }
+
+        private double RetornarSumXpotencia(List<double> lista, int potencia)
+        {
+            double suma = 0;
+            foreach (var item in lista)
+            {
+                suma = suma + Math.Pow(item, potencia);
+            }
+            return suma;
+        }
+
+        private double RetornarXPorY(int potencia, List<double> x, List<double> y)
+        {
+            double xpory = 0;
+
+            for (int i = 0; i < x.Count; i++)
+            {
+                xpory = xpory + Math.Pow(x[i], potencia) * y[i];
+            }
+            return xpory;
+
+        }
+
+        private double CalcularR(List<double> ListaX, List<double> ListaY, List<double> lista)
+        {
+            double Yprom = ListaY.Sum() / ListaY.Count();
+            double st = 0;
+
+            double sr = 0;
+            double r = 0;
+
+            foreach (var item in ListaY)
+            {
+                st = st + Math.Pow((item - Yprom), 2);
+            }
+
+            double acu = 0;
+
+            for (int i = 0; i < ListaX.Count; i++)
+            {
+                int potencia = 0;
+                foreach (var item in lista)
+                {
+                    acu = acu - item * Math.Pow(ListaX[i], potencia);
+                    potencia++;
+                }
+                sr = sr + Math.Pow((ListaY[i] + acu), 2);
+                acu = 0;
+            }
+            r = Math.Sqrt((st - sr) / st) * 100;
+
+
+            return r;
+        }
+
         public ResultadoLagranje PolinomioLagranje(ParametrosRegresion parametros , double valorX)
         {
             var resultado = new ResultadoLagranje();

@@ -60,6 +60,12 @@
     <Compile Include="Form Sistemas de ecuaciones\GaussSeidel.Designer.cs">
       <DependentUpon>GaussSeidel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Regresion\MinimosCuadradosPolinomio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regresion\MinimosCuadradosPolinomio.Designer.cs">
+      <DependentUpon>MinimosCuadradosPolinomio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Regresion\FormRegresion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </Compile>
     <EmbeddedResource Include="Form metodos raices\MetodosCerradosForm.resx">
       <DependentUpon>MetodosCerradosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regresion\MinimosCuadradosPolinomio.resx">
+      <DependentUpon>MinimosCuadradosPolinomio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

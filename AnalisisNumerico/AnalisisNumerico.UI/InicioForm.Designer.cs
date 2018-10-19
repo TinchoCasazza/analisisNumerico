@@ -40,9 +40,10 @@
             this.ecuacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gaussJordanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gaussSeidelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.regresionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minimosCuadradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.minimosCuadradosPolinomiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -139,7 +140,7 @@
             this.gaussJordanToolStripMenuItem.BackColor = System.Drawing.SystemColors.GrayText;
             this.gaussJordanToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gaussJordanToolStripMenuItem.Name = "gaussJordanToolStripMenuItem";
-            this.gaussJordanToolStripMenuItem.Size = new System.Drawing.Size(216, 32);
+            this.gaussJordanToolStripMenuItem.Size = new System.Drawing.Size(211, 32);
             this.gaussJordanToolStripMenuItem.Text = "Gauss Jordan";
             this.gaussJordanToolStripMenuItem.Click += new System.EventHandler(this.gaussJordanToolStripMenuItem_Click);
             // 
@@ -148,9 +149,29 @@
             this.gaussSeidelToolStripMenuItem.BackColor = System.Drawing.SystemColors.GrayText;
             this.gaussSeidelToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gaussSeidelToolStripMenuItem.Name = "gaussSeidelToolStripMenuItem";
-            this.gaussSeidelToolStripMenuItem.Size = new System.Drawing.Size(216, 32);
+            this.gaussSeidelToolStripMenuItem.Size = new System.Drawing.Size(211, 32);
             this.gaussSeidelToolStripMenuItem.Text = "Gauss Seidel";
             this.gaussSeidelToolStripMenuItem.Click += new System.EventHandler(this.gaussSeidelToolStripMenuItem_Click);
+            // 
+            // regresionToolStripMenuItem
+            // 
+            this.regresionToolStripMenuItem.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.regresionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.minimosCuadradosToolStripMenuItem,
+            this.minimosCuadradosPolinomiosToolStripMenuItem});
+            this.regresionToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regresionToolStripMenuItem.Name = "regresionToolStripMenuItem";
+            this.regresionToolStripMenuItem.Size = new System.Drawing.Size(169, 45);
+            this.regresionToolStripMenuItem.Text = "Regresion";
+            // 
+            // minimosCuadradosToolStripMenuItem
+            // 
+            this.minimosCuadradosToolStripMenuItem.BackColor = System.Drawing.SystemColors.GrayText;
+            this.minimosCuadradosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimosCuadradosToolStripMenuItem.Name = "minimosCuadradosToolStripMenuItem";
+            this.minimosCuadradosToolStripMenuItem.Size = new System.Drawing.Size(372, 32);
+            this.minimosCuadradosToolStripMenuItem.Text = "Minimos cuadrados";
+            this.minimosCuadradosToolStripMenuItem.Click += new System.EventHandler(this.minimosCuadradosToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -163,24 +184,14 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // regresionToolStripMenuItem
+            // minimosCuadradosPolinomiosToolStripMenuItem
             // 
-            this.regresionToolStripMenuItem.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.regresionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.minimosCuadradosToolStripMenuItem});
-            this.regresionToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regresionToolStripMenuItem.Name = "regresionToolStripMenuItem";
-            this.regresionToolStripMenuItem.Size = new System.Drawing.Size(169, 45);
-            this.regresionToolStripMenuItem.Text = "Regresion";
-            // 
-            // minimosCuadradosToolStripMenuItem
-            // 
-            this.minimosCuadradosToolStripMenuItem.BackColor = System.Drawing.SystemColors.GrayText;
-            this.minimosCuadradosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimosCuadradosToolStripMenuItem.Name = "minimosCuadradosToolStripMenuItem";
-            this.minimosCuadradosToolStripMenuItem.Size = new System.Drawing.Size(268, 32);
-            this.minimosCuadradosToolStripMenuItem.Text = "Minimos cuadrados";
-            this.minimosCuadradosToolStripMenuItem.Click += new System.EventHandler(this.minimosCuadradosToolStripMenuItem_Click);
+            this.minimosCuadradosPolinomiosToolStripMenuItem.BackColor = System.Drawing.SystemColors.GrayText;
+            this.minimosCuadradosPolinomiosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimosCuadradosPolinomiosToolStripMenuItem.Name = "minimosCuadradosPolinomiosToolStripMenuItem";
+            this.minimosCuadradosPolinomiosToolStripMenuItem.Size = new System.Drawing.Size(372, 32);
+            this.minimosCuadradosPolinomiosToolStripMenuItem.Text = "Minimos cuadrados polinomios";
+            this.minimosCuadradosPolinomiosToolStripMenuItem.Click += new System.EventHandler(this.minimosCuadradosPolinomiosToolStripMenuItem_Click);
             // 
             // InicioForm
             // 
@@ -217,6 +228,7 @@
         private System.Windows.Forms.ToolStripMenuItem gaussSeidelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regresionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem minimosCuadradosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem minimosCuadradosPolinomiosToolStripMenuItem;
     }
 }
 

@@ -11,5 +11,6 @@ namespace AnalisisNumerico.Entidades
         ResultadoRegresion MinimosCuadrados(ParametrosRegresion parametros);
 
         ResultadoLagranje PolinomioLagranje(ParametrosRegresion parametros , double valorX);
+        ResultadoRegresion MinimosCuadradosPolinomioGradoN(ParametrosRegresion parametros);
     }
 }
