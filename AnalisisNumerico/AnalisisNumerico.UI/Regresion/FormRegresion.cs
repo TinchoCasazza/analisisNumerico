@@ -20,7 +20,7 @@ namespace AnalisisNumerico.UI
             InitializeComponent();
             this.metodosRegresion = metodosRegresion;
         }
-
+        
         private void button_Confirmar_Click(object sender, EventArgs e)
         {
             dataGridView1.RowCount = int.Parse(textBox_cantPares.Text);

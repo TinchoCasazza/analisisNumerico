@@ -12,6 +12,7 @@ namespace AnalisisNumerico.Entidades
         public List<double> Y { get; set; }
         public int NumPares { get; set; }
         public int Grado { get; set; }
+        public int Error { get; set; }
 
         public ParametrosRegresion()
         {

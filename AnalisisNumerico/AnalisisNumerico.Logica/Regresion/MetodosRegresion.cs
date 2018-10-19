@@ -54,7 +54,7 @@ namespace AnalisisNumerico.Logica
             double sumatoriaY = parametros.Y.Sum();
             double r = 0;
 
-            while (parametros.Grado <= 10 || r <= 85)
+            while (parametros.Grado <= 10 || r <= parametros.Error)
             {
                 double[,] matriz = new double[parametros.Grado + 1, parametros.Grado + 2];
 

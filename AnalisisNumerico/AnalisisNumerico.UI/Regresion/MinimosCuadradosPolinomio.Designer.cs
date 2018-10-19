@@ -44,6 +44,8 @@
             this.textBoxEfectividad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_Gradfinal = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox_Error = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -192,12 +194,32 @@
             this.textBox_Gradfinal.Size = new System.Drawing.Size(100, 30);
             this.textBox_Gradfinal.TabIndex = 13;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(122, 150);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 25);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Error:";
+            // 
+            // textBox_Error
+            // 
+            this.textBox_Error.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Error.Location = new System.Drawing.Point(209, 150);
+            this.textBox_Error.Name = "textBox_Error";
+            this.textBox_Error.Size = new System.Drawing.Size(100, 30);
+            this.textBox_Error.TabIndex = 15;
+            // 
             // MinimosCuadradosPolinomio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(1142, 566);
+            this.Controls.Add(this.textBox_Error);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox_Gradfinal);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxEfectividad);
@@ -238,5 +260,7 @@
         private System.Windows.Forms.TextBox textBoxEfectividad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_Gradfinal;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox_Error;
     }
 }
