@@ -71,5 +71,12 @@ namespace AnalisisNumerico.UI
             formMinimosCuadrados.Owner = this;
             formMinimosCuadrados.Show();
         }
+
+        private void minimosCuadradosPolinomiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formuMiniPolinomio = Program.container.GetInstance<MinimosCuadradosPolinomio>();
+            formuMiniPolinomio.Owner = this;
+            formuMiniPolinomio.Show();
+        }
     }
 }

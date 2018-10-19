@@ -11,6 +11,8 @@ namespace AnalisisNumerico.Entidades
         public List<double> X { get; set; }
         public List<double> Y { get; set; }
         public int NumPares { get; set; }
+        public int Grado { get; set; }
+
         public ParametrosRegresion()
         {
             this.X = new List<double>();

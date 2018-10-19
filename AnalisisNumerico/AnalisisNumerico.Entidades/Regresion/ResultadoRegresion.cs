@@ -10,5 +10,8 @@ namespace AnalisisNumerico.Entidades
     {
         public double Pendiente { get; set; }
         public double OrdenadaOrigen { get; set; }
+        public List<double> Resul { get; set; }
+        public double Efectividad { get; set; }
+        public int GradoFinal { get; set; }
     }
 }
