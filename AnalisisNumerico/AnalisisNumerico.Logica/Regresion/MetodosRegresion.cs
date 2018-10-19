@@ -44,5 +44,38 @@ namespace AnalisisNumerico.Logica
 
             return resultado;
         }
+
+        public ResultadoLagranje PolinomioLagranje(ParametrosRegresion parametros , double valorX)
+        {
+            var resultado = new ResultadoLagranje();
+
+            double x = valorX;
+            double sumaY = 0; 
+
+            for (int i = 0; i < parametros.X.Count; i++)
+            {
+                double numerador = 1;
+                double denominador = 1;
+
+                for (int j = 0; j < parametros.X.Count; j++)
+                {
+                   
+                    if (i != j)
+                    {
+                        numerador = (x - parametros.X[j]) * numerador ;
+                        denominador = (parametros.X[i] - parametros.X[j]) * denominador;
+                    }
+                }
+
+                sumaY = (numerador / denominador) * parametros.X[i] + sumaY;
+            
+            }
+            
+            resultado.
+
+            return resultado;
+        }
+
+   
     }
 }

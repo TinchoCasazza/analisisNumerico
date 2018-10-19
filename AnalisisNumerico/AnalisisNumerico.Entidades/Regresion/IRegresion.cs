@@ -9,5 +9,7 @@ namespace AnalisisNumerico.Entidades
     public interface IRegresion
     {
         ResultadoRegresion MinimosCuadrados(ParametrosRegresion parametros);
+
+        ResultadoLagranje PolinomioLagranje(ParametrosRegresion parametros , double valorX);
     }
 }
