@@ -206,7 +206,7 @@ namespace AnalisisNumerico.Logica
             
             }
             
-            resultado.
+            //resultado.
 
             return resultado;
         }
