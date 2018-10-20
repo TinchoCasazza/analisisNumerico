@@ -78,5 +78,12 @@ namespace AnalisisNumerico.UI
             formuMiniPolinomio.Owner = this;
             formuMiniPolinomio.Show();
         }
+
+        private void lagranjeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formuLagranje = Program.container.GetInstance<FormRegresion>();
+            formuLagranje.Owner = this;
+            formuLagranje.Show();
+        }
     }
 }

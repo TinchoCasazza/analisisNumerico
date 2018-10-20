@@ -9,18 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AnalisisNumerico.UI
+namespace AnalisisNumerico.UI.Regresion
 {
-    public partial class FormRegresion : Form
+    public partial class FormLagranje : Form
     {
-        private readonly IRegresion metodosRegresion;
+        private readonly IRegresion metodoLagranje;
 
-        public FormRegresion(IRegresion metodosRegresion)
+        public FormLagranje(IRegresion metodoLagranje)
         {
             InitializeComponent();
-            this.metodosRegresion = metodosRegresion;
+            this.metodoLagranje = metodoLagranje;
         }
-        
+
         private void button_Confirmar_Click(object sender, EventArgs e)
         {
             dataGridView1.RowCount = int.Parse(textBox_cantPares.Text);
@@ -30,6 +30,7 @@ namespace AnalisisNumerico.UI
         private void button_Calcular_Click(object sender, EventArgs e)
         {
             var paramtros = new ParametrosRegresion();
+            double valorX = Convert.ToDouble(textBox_valX.Text);
 
             //recorre filas
             var cont = 0;
@@ -41,7 +42,7 @@ namespace AnalisisNumerico.UI
                 {//recorre las celdas de la columnas
                     foreach (DataGridViewCell cel in row.Cells)
                     {
-                        if (uno==true)
+                        if (uno == true)
                         {
                             paramtros.X.Add(Convert.ToDouble(cel.Value));
                             uno = false;
@@ -56,22 +57,18 @@ namespace AnalisisNumerico.UI
             }
             paramtros.NumPares = int.Parse(textBox_cantPares.Text);
 
-            var resul = metodosRegresion.MinimosCuadrados(paramtros);
+            var resul = metodoLagranje.PolinomioLagranje(paramtros, valorX);
 
-            textBox_Recta.Text = string.Format("  "+resul.Pendiente.ToString("N2")+"x + "+resul.OrdenadaOrigen.ToString("N2"));
+            textBox_Interpolacion.Text = resul.Interpolacion.ToString();
 
         }
 
         private void button_Limpiar_Click(object sender, EventArgs e)
         {
             dataGridView1.RowCount = 1;
-            textBox_Recta.Text = "";
+            textBox_Interpolacion.Text = "";
             textBox_cantPares.Text = "";
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
+    
 }
