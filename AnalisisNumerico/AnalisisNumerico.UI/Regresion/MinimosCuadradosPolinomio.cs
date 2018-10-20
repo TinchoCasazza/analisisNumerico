@@ -33,7 +33,7 @@ namespace AnalisisNumerico.UI
         {
             var paramtros = new ParametrosRegresion();
 
-            paramtros.Error = int.Parse(textBoxEfectividad.Text);
+            paramtros.Error = int.Parse(textBox_Error.Text);
 
             //recorre filas
             var cont = 0;

@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using AnalisisNumerico.Logica;
 using AnalisisNumerico.UI;
 using AnalisisNumerico.UI.Form_Sistemas_de_ecuaciones;
+using AnalisisNumerico.UI.Regresion;
 
 namespace AnalisisNumerico.UI
 {
@@ -81,7 +82,7 @@ namespace AnalisisNumerico.UI
 
         private void lagranjeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formuLagranje = Program.container.GetInstance<FormRegresion>();
+            var formuLagranje = Program.container.GetInstance<FormLagranje>();
             formuLagranje.Owner = this;
             formuLagranje.Show();
         }

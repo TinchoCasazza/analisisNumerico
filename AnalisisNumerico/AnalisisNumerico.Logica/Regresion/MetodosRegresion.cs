@@ -54,7 +54,7 @@ namespace AnalisisNumerico.Logica
             double sumatoriaY = parametros.Y.Sum();
             double r = 0;
 
-            while (parametros.Grado <= 10 || r <= parametros.Error)
+            while (parametros.Grado <= 10 && r <= parametros.Error)
             {
                 double[,] matriz = new double[parametros.Grado + 1, parametros.Grado + 2];
 
@@ -76,7 +76,7 @@ namespace AnalisisNumerico.Logica
                     else if (columna == 0)
                     {
                         pot = 1;
-                        matriz[0, 0] = parametros.NumPares + 1;
+                        matriz[0, 0] = parametros.NumPares;
                         for (int i = 1; i < parametros.Grado + 1; i++)
                         {
                             matriz[i, columna] = RetornarSumXpotencia(parametros.X, pot);
@@ -120,7 +120,7 @@ namespace AnalisisNumerico.Logica
 
                 resul.Efectividad = r;
                 resul.Resul = resultadoGauss.Resultados;
-                resul.GradoFinal = parametros.Grado;
+                resul.GradoFinal = parametros.Grado -1;
             }
 
             return resul;
