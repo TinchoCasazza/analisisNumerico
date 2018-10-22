@@ -104,6 +104,12 @@
     <Compile Include="Form metodos raices\MetodosCerradosForm.Designer.cs">
       <DependentUpon>MetodosCerradosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form Integracion Numerica\Trapecios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Integracion Numerica\Trapecios.Designer.cs">
+      <DependentUpon>Trapecios.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form Sistemas de ecuaciones\GaussJordan.resx">
       <DependentUpon>GaussJordan.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Regresion\MinimosCuadradosPolinomio.resx">
       <DependentUpon>MinimosCuadradosPolinomio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form Integracion Numerica\Trapecios.resx">
+      <DependentUpon>Trapecios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

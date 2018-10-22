@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Integracion Numerica\IMetodoIntegracion.cs" />
+    <Compile Include="Integracion Numerica\ParametrosTrapecio.cs" />
     <Compile Include="Regresion\IRegresion.cs" />
     <Compile Include="Regresion\ParametrosRegresion.cs" />
     <Compile Include="Raices\IMetodosRaices.cs" />
@@ -48,6 +50,7 @@
     <Compile Include="Raices\ResultadoRaices.cs" />
     <Compile Include="Regresion\ResultadoLagranje.cs" />
     <Compile Include="Regresion\ResultadoRegresion.cs" />
+    <Compile Include="Integracion Numerica\ResultadoTrapecio.cs" />
     <Compile Include="Sistema de ecuaciones\ISistemaDeEcuaciones.cs" />
     <Compile Include="Sistema de ecuaciones\ParametrosEcuaciones.cs" />
     <Compile Include="Sistema de ecuaciones\ResultadoEcuaciones.cs" />

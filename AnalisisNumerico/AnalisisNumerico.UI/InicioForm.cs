@@ -86,5 +86,13 @@ namespace AnalisisNumerico.UI
             formuLagranje.Owner = this;
             formuLagranje.Show();
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var formTrapecio = Program.container.GetInstance<Trapecios>();
+            formTrapecio.Owner = this;
+            formTrapecio.Show();
+
+        }
     }
 }

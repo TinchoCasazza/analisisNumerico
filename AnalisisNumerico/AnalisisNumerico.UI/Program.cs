@@ -32,6 +32,7 @@ namespace AnalisisNumerico.UI
             container.Register<IMetodosRaices, MetodosRaices>();
             container.Register<ISistemaDeEcuaciones,SistemaDeEcuaciones>();
             container.Register<IRegresion, MetodosRegresion>();
+            container.Register<IMetodoIntegracion, MetodosIntegracion>();
         }
     }
 }
