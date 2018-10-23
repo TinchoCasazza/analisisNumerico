@@ -202,7 +202,7 @@ namespace AnalisisNumerico.Logica
                     }
                 }
 
-                sumaY = (numerador / denominador) * parametros.X[i] + sumaY;
+                sumaY = (numerador / denominador) * parametros.Y[i] + sumaY;
 
             }
 
