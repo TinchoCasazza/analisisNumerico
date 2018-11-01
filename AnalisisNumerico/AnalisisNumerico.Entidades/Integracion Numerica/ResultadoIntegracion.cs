@@ -1,6 +1,6 @@
 ﻿namespace AnalisisNumerico.Entidades
 {
-    public class ResultadoTrapecio
+    public class ResultadoIntegracion
     {
         public double Valor { get; set; }
     }

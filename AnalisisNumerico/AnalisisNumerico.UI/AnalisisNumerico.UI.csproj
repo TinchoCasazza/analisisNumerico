@@ -110,6 +110,15 @@
     <Compile Include="Form Integracion Numerica\Trapecios.Designer.cs">
       <DependentUpon>Trapecios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form Integracion Numerica\Simpsons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Integracion Numerica\Simpsons.Designer.cs">
+      <DependentUpon>Simpsons.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form Integracion Numerica\Simpsons.resx">
+      <DependentUpon>Simpsons.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form Sistemas de ecuaciones\GaussJordan.resx">
       <DependentUpon>GaussJordan.cs</DependentUpon>
     </EmbeddedResource>

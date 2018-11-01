@@ -1,6 +1,6 @@
 ﻿namespace AnalisisNumerico.Entidades
 {
-    public class ParametrosTrapecio
+    public class ParametrosIntegracion
     {
         public string Funcion { get; set; }
 

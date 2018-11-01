@@ -2,8 +2,14 @@
 {
     public interface IMetodoIntegracion
     {
-        ResultadoTrapecio MetodoTrapecioSimple(ParametrosTrapecio parametros);
+        ResultadoIntegracion MetodoTrapecioSimple(ParametrosIntegracion parametros);
 
-        ResultadoTrapecio MetodoTrapecioMultiple(ParametrosTrapecio parametros);
+        ResultadoIntegracion MetodoTrapecioMultiple(ParametrosIntegracion parametros);
+
+        ResultadoIntegracion MetodoSimpson13Simple(ParametrosIntegracion parametros);
+
+        ResultadoIntegracion MetodoSimpson13Multiple(ParametrosIntegracion parametros);
+
+        ResultadoIntegracion MetodoSimpson38(ParametrosIntegracion parametros);
     }
 }
