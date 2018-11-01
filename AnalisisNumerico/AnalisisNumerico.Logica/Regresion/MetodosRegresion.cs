@@ -9,6 +9,13 @@ namespace AnalisisNumerico.Logica
 {
     public class MetodosRegresion : IRegresion
     {
+        private readonly ISistemaDeEcuaciones metodosSistemaEcuaciones; //Ver como se setea
+
+        public MetodosRegresion(ISistemaDeEcuaciones metodosistema)
+        {
+            this.metodosSistemaEcuaciones = metodosistema;
+        }
+
         public ResultadoRegresion MinimosCuadrados(ParametrosRegresion parametros)
         {
             var resultado = new ResultadoRegresion();
@@ -44,7 +51,6 @@ namespace AnalisisNumerico.Logica
 
             return resultado;
         }
-
 
         public ResultadoRegresion MinimosCuadradosPolinomioGradoN(ParametrosRegresion parametros)
         {
@@ -100,7 +106,8 @@ namespace AnalisisNumerico.Logica
 
                 }
 
-                var SistemaDeEcucuaciones = new SistemaDeEcuaciones();
+                //var SistemaDeEcucuaciones = new SistemaDeEcuaciones();
+
                 var param = new ParametrosEcuaciones();
                 param.NumIncognitas = parametros.Grado + 1;
 
@@ -112,7 +119,9 @@ namespace AnalisisNumerico.Logica
                     }
                 }
 
-                var resultadoGauss = SistemaDeEcucuaciones.GaussJordan(param);
+
+
+                var resultadoGauss = metodosSistemaEcuaciones.GaussJordan(param);
 
                 r = CalcularR(parametros.X, parametros.Y, resultadoGauss.Resultados);
 
@@ -120,7 +129,7 @@ namespace AnalisisNumerico.Logica
 
                 resul.Efectividad = r;
                 resul.Resul = resultadoGauss.Resultados;
-                resul.GradoFinal = parametros.Grado -1;
+                resul.GradoFinal = parametros.Grado - 1;
             }
 
             return resul;
