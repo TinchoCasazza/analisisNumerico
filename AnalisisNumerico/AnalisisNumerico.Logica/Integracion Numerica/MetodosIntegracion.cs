@@ -121,7 +121,7 @@ namespace AnalisisNumerico.Logica
                 {
                     var argumento3 = new Argument("x", parametros.PrimerValor + i * altura);
                     var f3 = new Expression("f(x)", funcion, argumento3);
-                    suma1 = suma1 + f3.calculate();
+                    suma2 = suma2 + f3.calculate();
                 }
             }
 

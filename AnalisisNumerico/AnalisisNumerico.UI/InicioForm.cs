@@ -94,5 +94,12 @@ namespace AnalisisNumerico.UI
             formTrapecio.Show();
 
         }
+
+        private void simpsonsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var homero = Program.container.GetInstance<Simpsons>();
+            homero.Owner = this;
+            homero.Show();
+        }
     }
 }
